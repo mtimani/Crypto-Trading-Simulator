@@ -7,7 +7,6 @@ import sys
 import argparse
 import os
 import os.path
-import numpy as np
 from pygments import highlight
 from pygments.formatters.terminal256 import Terminal256Formatter
 from pygments.lexers.web import JsonLexer
