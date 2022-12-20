@@ -9,12 +9,7 @@ import sys
 import argparse
 import os
 import os.path
-import concurrent.futures
-import numpy as np
-from random import uniform
-from time import sleep
-from pygments import highlight
-from collections import Counter 
+from pygments import highlight 
 from pygments.formatters.terminal256 import Terminal256Formatter
 from pygments.lexers.web import JsonLexer
 from termcolor import colored, cprint
