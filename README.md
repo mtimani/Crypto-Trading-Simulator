@@ -26,6 +26,21 @@ required arguments:
                         directory that will store results
 ```
 
+### statistics.py
+This script allows to find the most promicing parameters from tested trading strategies
+
+```
+usage: statistics.py [-h] [-l] -d DIRECTORY
+
+options:
+  -h, --help            show this help message and exit
+  -l, --logging         enable logging in the console
+
+required arguments:
+  -d DIRECTORY, --directory DIRECTORY
+                        directory that contains results from previous tests
+```
+
 ### strategy_validation.py
 This script allows to validate simulated trading strategies with fixed parameters on all crypto currencies
 
