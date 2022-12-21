@@ -15,36 +15,63 @@ from termcolor import colored, cprint
 
 
 #-----------Global variables------------#
-nb_strategies = 3
+max_nb_strategies = 3
 
 
 
 #-----Validate Directory Parameter------#
 class validateDirectoryParameter(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
-        global nb_strategies
+        global max_nb_strategies
 
         if not os.path.isdir(values):
             parser.error(f"Please enter a valid directory that contains results from previous tests. Got: {values}")
         else:
-            for strategy in range(1,nb_strategies+1):
-                if not os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/exceptional.json"):
-                    parser.error(f"Please enter a valid directory that contains results from previous tests. Got: {values}")
-                elif not os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/optimized_out.json"):
-                    parser.error(f"Please enter a valid directory that contains results from previous tests. Got: {values}")
+            exists = False
+            for strategy in range(1, max_nb_strategies + 1):
+                if os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/exceptional.json"):
+                    if os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/optimized_out.json"):
+                        exists = True
+            if not exists:
+                parser.error(f"Please enter a valid directory that contains results from previous tests. Got: {values}")
+        setattr(namespace, self.dest, values)
+
+
+
+#-----Validate Strategy Parameters------#
+class validateStrategiesParameters(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        global max_nb_strategies
+
+        allowed_values = []
+        for i in range(1,max_nb_strategies+1):
+            allowed_values.append(str(i))
+
+        for i in values:
+            if not (i in allowed_values):
+                parser.error(f"Please enter valid strategies to test. Allowed strategies are between 1 and " + str(max_nb_strategies) + ". Got: " + str(values))
+                break
+
         setattr(namespace, self.dest, values)
 
 
 
 #--------Arguments Parse Function-------#
 def parse_command_line():
+    ## Global variables
+    global max_nb_strategies
+
     ## Arguments groups
     parser      = argparse.ArgumentParser()
     required    = parser.add_argument_group('required arguments')
+    exclusive   = parser.add_argument_group('mutually exclusive arguments')
+    content     = exclusive.add_mutually_exclusive_group(required=True)
 
     ## Arguments
     parser.add_argument("-l", "--logging", action='store_true', dest="logging", help="enable logging in the console")
     required.add_argument("-d", "--directory", dest="directory", help="directory that contains results from previous tests", required=True, action=validateDirectoryParameter)
+    content.add_argument("-a", "--all", action='store_true', dest="all", help="run script with all strategies")
+    content.add_argument("-s", "--strategies", dest="strategy", nargs='+', help="run script with specific strategies (allowed strategies between 1 and " + str(max_nb_strategies) + ")",  action=validateStrategiesParameters)
     return parser
 
 
@@ -52,26 +79,47 @@ def parse_command_line():
 #-------------Main Function-------------#
 def main(args):
     ## Variables
-    global nb_strategies
-    directory   = args.directory
-    logging     = args.logging
-    final       = {}
+    global max_nb_strategies
+    directory               = args.directory
+    logging                 = args.logging
+    run_all_strategies      = args.all
+    run_specific_strategies = args.strategy 
+    final                   = {}
+    strategies              = []
+
+    ## Strategies list population
+    ### If option -a is specified
+    if run_all_strategies:
+        for i in range(1, max_nb_strategies + 1):
+            strategies.append(str(i))
+    ### If option -s is specified
+    elif len(run_specific_strategies) != 0:
+        strategies = sorted(set(run_specific_strategies)).copy()
+
+    ## Output to console if logging is enabled
+    if logging:
+        log_text = "\n[INFO]\t\tLaunching statistics.py script for the following strategies: " + strategies[0]
+        if len(strategies) > 1:
+            for strat in strategies[1:-1]:
+                log_text += ", " + strat
+            log_text += " and " + strategies[-1]
+        cprint(log_text, 'blue')
 
     ## Create output directories
     try:
         os.mkdir(directory + "/Statistics")
         if logging:
-            cprint("\n[INFO]\t\tCreation of " + directory + "/Statistics directory", 'blue')
+            cprint("[INFO]\t\tCreation of " + directory + "/Statistics directory", 'blue')
     except FileExistsError:
         if logging:
-            cprint("\n[INFO]\t\tDirectory " + directory + "/Statistics already exists", 'blue')
+            cprint("[INFO]\t\tDirectory " + directory + "/Statistics already exists", 'blue')
         else:
             None
     except:
         raise
 
     ## Loop through strategies
-    for strategy in range(1,nb_strategies+1):
+    for strategy in strategies:
         ### Output to console if logging is enabled
         if logging:
             cprint("\n[INFO]\t\tStarting strategy " + str(strategy) + " statistical analysis", 'blue')
