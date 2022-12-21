@@ -8,7 +8,27 @@ sudo pip3 install -r requirements.txt
 pip3 install -r requirements.txt
 ```
 
-## Usage 
+## Automated launch with the launcher.py script
+**This script allows to launch all the scripts allowing a full simulation of all available strategies**  
+
+```
+usage: launcher.py [-h] [-l] -d DIRECTORY (-a | -s STRATEGY [STRATEGY ...])
+
+options:
+  -h, --help            show this help message and exit
+  -l, --logging         enable logging in the console
+
+required arguments:
+  -d DIRECTORY, --directory DIRECTORY
+                        directory that contains results from previous tests
+
+mutually exclusive arguments:
+  -a, --all             run all scripts for all strategies
+  -s STRATEGY [STRATEGY ...], --strategies STRATEGY [STRATEGY ...]
+                        run specific strategies (allowed strategies between 1 and 3)
+```
+
+## Usage of each script separately
 ### strategy_testing.py
 This script allows to simulate trading strategies with multiple parameters on all crypto currencies
 
