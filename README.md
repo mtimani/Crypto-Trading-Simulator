@@ -70,7 +70,7 @@ mutually exclusive arguments:
 
 ### strategy_validation.py
 This script allows to validate simulated trading strategies with fixed parameters on all crypto currencies  
-**The script can be ran after the execution of the strategy_testing.py script is complete *not mandatory* **
+**The script can be ran after the execution of the strategy_testing.py script is complete ** **not mandatory**  
 
 ```
 usage: strategy_validation.py [-h] [-l] -d DIRECTORY [-s STRATEGY] -m MAX_LOSSES -e EMA_WINDOW
