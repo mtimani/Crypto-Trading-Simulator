@@ -123,6 +123,11 @@ def main(args):
     except:
         raise
 
+    ## Check if an exceptional file already exists
+    output_file = directory + "/Exceptional_combination/exceptional_final.json"
+    with open(output_file, "r") as fp:
+        final = json.load(fp)
+
     ## Open exceptional files
     for strategy in strategies:
         with open(directory + "/Strategy_" + strategy + "_testing/exceptional.json", "r") as fp:
