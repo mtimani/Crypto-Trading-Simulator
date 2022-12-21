@@ -234,8 +234,6 @@ def main(args):
         max_ema_optimized     = max(number_of_optimized_entries_by_ema_window, key=number_of_optimized_entries_by_ema_window.get)
         max_ema_optimized_nb  = max(number_of_optimized_entries_by_ema_window.values())
 
-        print(max_ema_optimized_for_exceptional_ema_for_max_loss)
-
         ### Return extraction
         optimized_return_average = optimized_out["average"]
 
