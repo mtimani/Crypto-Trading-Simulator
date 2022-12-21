@@ -33,6 +33,7 @@ coins = ["AAVEUSDT","ABBCUSDT","ADAUSDT","ALGOUSDT","AMPUSDT","ANKRUSDT","ANTUSD
 #-----------Global variables------------#
 strategy = 0
 startdate = '2022-01-01'
+max_nb_strategies = 3
 exceptional = {}
 
 
@@ -115,7 +116,7 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
             output = bt.optimize(loss=[int(max_losses)],window_1=[int(ema_window)])
 
             loss = float(str(output._strategy).split('loss=')[1].split(',')[0]) / 100
-            sl_p = 1 - loss
+            sl_p = float(str(round(1 - loss, 3)))
             tp_p = 1 + 1.5 * loss
             
             window = float(str(output._strategy).split('window_1=')[1].split(')')[0]) 
@@ -170,9 +171,15 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
 #------Validate Strategy Parameter------#
 class validateStrategyParameter(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
-        allowed_values = ["1","2","3"]
+        ## Global variables
+        global max_nb_strategies
+
+        allowed_values = []
+        for i in range(1,max_nb_strategies+1):
+            allowed_values.append(str(i))
+
         if not (values in allowed_values):
-            parser.error(f"Please enter a valid strategy number (between 1 and 3). Got: {values}")
+            parser.error(f"Please enter a valid strategy number (between 1 and " + str(max_nb_strategies) + "). Got: {values}")
         setattr(namespace, self.dest, values)
 
 
@@ -210,6 +217,9 @@ class validateEMAWindowParameter(argparse.Action):
 
 #--------Arguments Parse Function-------#
 def parse_command_line():
+    ## Global variables
+    global max_nb_strategies
+
     ## Arguments groups
     parser      = argparse.ArgumentParser()
     required    = parser.add_argument_group('required arguments')
@@ -217,7 +227,7 @@ def parse_command_line():
     ## Arguments
     parser.add_argument("-l", "--logging", action='store_true', dest="logging", help="enable logging in the console")
     required.add_argument("-d", "--directory", dest="directory", help="directory that will store results", required=True, action=validateDirectoryParameter)
-    required.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and 3", required=False, action=validateStrategyParameter)
+    required.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and " + str(max_nb_strategies), required=False, action=validateStrategyParameter)
     required.add_argument("-m", "--max-losses", dest="max_losses", help="maximum loss percentage accepted by the strategy (allowed values between 1 and 9)", required=True, action=validateMaxLossesParameter)
     required.add_argument("-e", "--ema-window", dest="ema_window", help="EMA window size (allowed values: 20, 50, 100, 200)", required=True, action=validateEMAWindowParameter)
     return parser
