@@ -33,6 +33,7 @@ coins = ["AAVEUSDT","ABBCUSDT","ADAUSDT","ALGOUSDT","AMPUSDT","ANKRUSDT","ANTUSD
 #-----------Global variables------------#
 strategy = 0
 startdate = '2022-01-01'
+max_nb_strategies = 3
 exceptional = {}
 
 
@@ -115,7 +116,7 @@ def worker_f(directory, strat, logging):
             output = bt.optimize(loss=range(1,11,1),window_1=[20,50,100,200])
 
             loss = float(str(output._strategy).split('loss=')[1].split(',')[0]) / 100
-            sl_p = 1 - loss
+            sl_p = float(str(round(1 - loss, 3)))
             tp_p = 1 + 1.5 * loss
             
             window = float(str(output._strategy).split('window_1=')[1].split(')')[0])
@@ -170,9 +171,14 @@ def worker_f(directory, strat, logging):
 #------Validate Strategy Parameter------#
 class validateStrategyParameter(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
-        allowed_values = ["1","2","3"]
+        global max_nb_strategies
+
+        allowed_values = []
+        for i in range(1,max_nb_strategies+1):
+            allowed_values.append(str(i))
+
         if not (values in allowed_values):
-            parser.error(f"Please enter a valid strategy number (between 1 and 3). Got: {values}")
+            parser.error(f"Please enter a valid strategy number (between 1 and " + str(max_nb_strategies) + "). Got: {values}")
         setattr(namespace, self.dest, values)
 
 
@@ -188,13 +194,16 @@ class validateDirectoryParameter(argparse.Action):
 
 #--------Arguments Parse Function-------#
 def parse_command_line():
+    ## Global variables
+    global max_nb_strategies
+
     ## Arguments groups
     parser      = argparse.ArgumentParser()
     required    = parser.add_argument_group('required arguments')
 
     ## Arguments
     parser.add_argument("-l", "--logging", action='store_true', dest="logging", help="enable logging in the console")
-    parser.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and 3 (default strategy: 1)", required=False, default="1", action=validateStrategyParameter)
+    parser.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and " + str(max_nb_strategies) + " (default strategy: 1)", required=False, default="1", action=validateStrategyParameter)
     required.add_argument("-d", "--directory", dest="directory", help="directory that will store results", required=True, action=validateDirectoryParameter)
     return parser
 
@@ -207,19 +216,24 @@ def main(args):
     logging     = args.logging
     strategy    = args.strategy
 
+    ## Output to console if logging is enabled
+    if logging:
+        cprint("\n[INFO]\t\tRunning strategy_testing.py with the strategy number " + strategy, 'blue')
+
     ## Create output directories
     try:
         os.mkdir(directory + "/Strategy_" + strategy + "_testing")
         if logging:
-            cprint("\n[INFO]\t\tCreation of " + directory + "/Strategy_" + strategy + "_testing directory", 'blue')
+            cprint("[INFO]\t\tCreation of " + directory + "/Strategy_" + strategy + "_testing directory", 'blue')
     except FileExistsError:
         if logging:
-            cprint("\n[INFO]\t\tDirectory " + directory + "/Strategy_" + strategy + "_testing already exists", 'blue')
+            cprint("[INFO]\t\tDirectory " + directory + "/Strategy_" + strategy + "_testing already exists", 'blue')
         else:
             None
     except:
         raise
 
+    ## Launch worker function
     worker_f(directory, strategy, logging)
 
     ## Write exceptional to file
