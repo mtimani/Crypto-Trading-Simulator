@@ -9,6 +9,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Automated launch with the launcher.py script
+### launcher.py
 **This script allows to launch all the scripts allowing a full simulation of all available strategies**  
 
 ```
