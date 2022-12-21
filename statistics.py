@@ -96,14 +96,13 @@ def main(args):
     elif len(run_specific_strategies) != 0:
         strategies = sorted(set(run_specific_strategies)).copy()
 
-    ## Output to console if logging is enabled
-    if logging:
-        log_text = "\n[INFO]\t\tLaunching statistics.py script for the following strategies: " + strategies[0]
-        if len(strategies) > 1:
-            for strat in strategies[1:-1]:
-                log_text += ", " + strat
-            log_text += " and " + strategies[-1]
-        cprint(log_text, 'blue')
+    ## Output to console
+    log_text = "\n[INFO]\t\tLaunching statistics.py script for the following strategies: " + strategies[0]
+    if len(strategies) > 1:
+        for strat in strategies[1:-1]:
+            log_text += ", " + strat
+        log_text += " and " + strategies[-1]
+    cprint(log_text, 'blue')
 
     ## Check if all directories are populated (so that the sript can properly run)
     for strategy in strategies:
@@ -126,6 +125,12 @@ def main(args):
             None
     except:
         raise
+
+    ## Check if an statistics file already exists
+    output_file = directory + "/Statistics/statistics.json"
+    if os.path.isfile(output_file):
+        with open(output_file, "r") as fp:
+            final = json.load(fp)
 
     ## Loop through strategies
     for strategy in strategies:
@@ -203,9 +208,8 @@ def main(args):
         number_of_optimized_entries_by_ema_window = {}
         max_ema_optimized_for_exceptional_ema_for_max_loss = 0
 
-        #### Output to console if logging is enabled
-        if logging:
-            cprint("[INFO]\t\tStarting analysis of " + directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json file", 'blue')
+        #### Output to console
+        cprint("[INFO]\t\tStarting analysis of " + directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json file", 'blue')
 
         ### Loop through optimized_out entries
         for coin in optimized_out["results"]:         
@@ -238,10 +242,10 @@ def main(args):
         optimized_return_average = optimized_out["average"]
 
         ### Add results to final dictionnary
-        final["strategy_" + str(strategy)] = {"Average": optimized_return_average, "Exceptional": {"Most frequent losses": {max_loss_exceptional: max_loss_exceptional_nb}, "Most frequent EMA": {max_ema_exceptional: max_ema_exceptional_nb}, "Most frequent EMA for most frequent loss": {max_ema_for_max_loss: max_ema_for_max_loss_nb}}, "Optimized": {max_loss_optimized: max_loss_optimized_nb, max_ema_optimized: max_ema_optimized_nb, str(max_ema_for_max_loss).split('.')[0]+"_exceptional": max_ema_optimized_for_exceptional_ema_for_max_loss}}
+        final["strategy_" + str(strategy)] = {"Average": optimized_return_average, "Exceptional": {"Most frequent losses": {str(max_loss_exceptional): max_loss_exceptional_nb}, "Most frequent EMA": {str(max_ema_exceptional): max_ema_exceptional_nb}, "Most frequent EMA for most frequent loss": {str(max_ema_for_max_loss): max_ema_for_max_loss_nb}}, "Optimized": {str(max_loss_optimized): max_loss_optimized_nb, str(max_ema_optimized): max_ema_optimized_nb, str(max_ema_for_max_loss).split('.')[0]+"_exceptional": max_ema_optimized_for_exceptional_ema_for_max_loss}}
 
     ## Format JSON
-    formatted_final = json.dumps(final, indent=4)
+    formatted_final = json.dumps(final, sort_keys=True, indent=4)
 
     ## Display to console if the logging is on
     if logging:
@@ -249,9 +253,9 @@ def main(args):
         print(colorful)
     
     ## Write exceptional to file
-    output_file = directory + "/Statistics/exceptional_final.json"
+    output_file = directory + "/Statistics/statistics.json"
     with open(output_file, "w") as fp:
-        fp.write(json.dumps(final, indent=4))
+        fp.write(json.dumps(final, sort_keys=True, indent=4))
 
 
 
