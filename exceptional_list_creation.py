@@ -95,14 +95,13 @@ def main(args):
     elif len(run_specific_strategies) != 0:
         strategies = sorted(set(run_specific_strategies)).copy()
 
-    ## Output to console if logging is enabled
-    if logging:
-        log_text = "\n[INFO]\t\tLaunching exceptional_list_creation.py script for the following strategies: " + strategies[0]
-        if len(strategies) > 1:
-            for strat in strategies[1:-1]:
-                log_text += ", " + strat
-            log_text += " and " + strategies[-1]
-        cprint(log_text, 'blue')
+    ## Output to console
+    log_text = "\n[INFO]\t\tLaunching exceptional_list_creation.py script for the following strategies: " + strategies[0]
+    if len(strategies) > 1:
+        for strat in strategies[1:-1]:
+            log_text += ", " + strat
+        log_text += " and " + strategies[-1]
+    cprint(log_text, 'blue')
 
     ## Check if all directories are populated (so that the sript can properly run)
     for strategy in strategies:
@@ -125,8 +124,9 @@ def main(args):
 
     ## Check if an exceptional file already exists
     output_file = directory + "/Exceptional_combination/exceptional_final.json"
-    with open(output_file, "r") as fp:
-        final = json.load(fp)
+    if os.path.isfile(output_file):
+        with open(output_file, "r") as fp:
+            final = json.load(fp)
 
     ## Open exceptional files
     for strategy in strategies:
