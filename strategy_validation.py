@@ -9,6 +9,7 @@ import sys
 import argparse
 import os
 import os.path
+import numpy as np
 from pygments import highlight
 from pygments.formatters.terminal256 import Terminal256Formatter
 from pygments.lexers.web import JsonLexer
@@ -113,7 +114,8 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
             ### Backtesting for specific coin
             df = getData(coin, startdate)
             bt = Backtest(df, DataTrader, cash = 100000, commission = 0.0015)
-            output = bt.optimize(loss=[int(max_losses)],window_1=[int(ema_window)])
+            with np.errstate(invalid='ignore'):
+                output = bt.optimize(loss=[int(max_losses)],window_1=[int(ema_window)])
 
             loss = float(str(output._strategy).split('loss=')[1].split(',')[0]) / 100
             sl_p = float(str(round(1 - loss, 3)))
@@ -158,7 +160,7 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
         fp.write(formatted_final)
     
     ## Display completion of the worker
-    cprint("\n[INFO]\t\tSimulation of strategy " + strategy + " is complete", 'blue')
+    cprint("[INFO]\t\tSimulation of strategy " + strategy + " is complete", 'blue')
 
     ## Display to console if the logging is on
     if logging:
@@ -243,9 +245,8 @@ def main(args):
     ema_window  = args.ema_window
 
     ## Output to console if logging is enabled
-    if logging:
-        losses = str(round(1 - float(max_losses) / 100, 3))
-        cprint("\n[INFO]\t\tRunning strategy_testing.py with the strategy number " + strategy + ", losses = " + losses + " and ema_window = " + ema_window, 'blue')
+    losses = str(round(1 - float(max_losses) / 100, 3))
+    cprint("\n[INFO]\t\tRunning strategy_testing.py with the strategy number " + strategy + ", losses = " + losses + " and ema_window = " + ema_window, 'blue')
 
     ## Create output directories
     try:
