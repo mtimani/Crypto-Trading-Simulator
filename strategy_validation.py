@@ -139,9 +139,8 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
             continue
 
         except:
-            ### Error output to console if logging is enabled
-            if logging:
-                cprint('[ERROR]\t\tAn error occured for ' + coin + ' with sl = ' + str(sl_p) + ', tp = ' + str(tp_p) + ' and window = ' + str(window), 'red')
+            ### Error output to console
+            cprint('[ERROR]\t\tAn error occured for ' + coin + ' with sl = ' + str(sl_p) + ', tp = ' + str(tp_p) + ' and window = ' + str(window), 'red')
             continue
 
     ## Average calculation
@@ -243,14 +242,19 @@ def main(args):
     max_losses  = args.max_losses
     ema_window  = args.ema_window
 
+    ## Output to console if logging is enabled
+    if logging:
+        losses = str(round(1 - float(max_losses) / 100, 3))
+        cprint("\n[INFO]\t\tRunning strategy_testing.py with the strategy number " + strategy + ", losses = " + losses + " and ema_window = " + ema_window, 'blue')
+
     ## Create output directories
     try:
         os.mkdir(directory + "/Strategy_" + strategy + "_validation")
         if logging:
-            cprint("\n[INFO]\t\tCreation of " + directory + "/Strategy_" + strategy + "_validation directory", 'blue')
+            cprint("[INFO]\t\tCreation of " + directory + "/Strategy_" + strategy + "_validation directory", 'blue')
     except FileExistsError:
         if logging:
-            cprint("\n[INFO]\t\tDirectory " + directory + "/Strategy_" + strategy + "_validation already exists", 'blue')
+            cprint("[INFO]\t\tDirectory " + directory + "/Strategy_" + strategy + "_validation already exists", 'blue')
         else:
             None
     except:
