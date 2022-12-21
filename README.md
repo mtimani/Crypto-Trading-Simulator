@@ -27,7 +27,7 @@ required arguments:
 ```
 
 ### statistics.py
-This script allows to find the most promicing parameters from tested trading strategies
+This script allows to find the most promicing parameters from tested trading strategies  
 **The script must be ran only after the execution of the strategy_testing.py script is complete**
 
 ```
@@ -48,7 +48,7 @@ mutually exclusive arguments:
 ```
 
 ### exceptional_list_creation.py
-This script allows to extract the strategies that were the most efficient per crypto currency (for a specified period of time)
+This script allows to extract the strategies that were the most efficient per crypto currency (for a specified period of time)  
 **The script must be ran only after the execution of the strategy_testing.py script is complete**
 
 ```
@@ -69,7 +69,7 @@ mutually exclusive arguments:
 ```
 
 ### strategy_validation.py
-This script allows to validate simulated trading strategies with fixed parameters on all crypto currencies
+This script allows to validate simulated trading strategies with fixed parameters on all crypto currencies  
 **The script can be ran after the execution of the strategy_testing.py script is complete *not mandatory* **
 
 ```
