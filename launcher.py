@@ -89,14 +89,13 @@ def main(args):
     elif len(run_specific_strategies) != 0:
         strategies = sorted(set(run_specific_strategies)).copy()
 
-    ## Output to console if logging is enabled
-    if logging:
-        log_text = "\n[INFO]\t\tLaunching all scripts for the following strategies: " + strategies[0]
-        if len(strategies) > 1:
-            for strat in strategies[1:-1]:
-                log_text += ", " + strat
-            log_text += " and " + strategies[-1]
-        cprint(log_text, 'blue')
+    ## Output to console
+    log_text = "\n[INFO]\t\tLaunching all scripts for the following strategies: " + strategies[0]
+    if len(strategies) > 1:
+        for strat in strategies[1:-1]:
+            log_text += ", " + strat
+        log_text += " and " + strategies[-1]
+    cprint(log_text, 'blue')
 
     ## Launching strategy_testing.py script
     for strat in strategies:
@@ -126,7 +125,7 @@ def main(args):
                 bashCommand += " -l"
             os.system(bashCommand)
         except:
-            cprint("[ERROR]\t\tAn error occured while trying to run exceptional_list_creation.py script with the following strategy numbers " + str(strategies), 'red')
+            cprint("\n[ERROR]\t\tAn error occured while trying to run exceptional_list_creation.py script with the following strategy numbers " + str(strategies), 'red')
 
         ### Launching statistics.py script
         try:
@@ -135,19 +134,19 @@ def main(args):
                 bashCommand += " -l"
             os.system(bashCommand)
         except:
-            cprint("[ERROR]\t\tAn error occured while trying to run statistics.py script with the following strategy numbers " + str(strategies), 'red')
+            cprint("\n[ERROR]\t\tAn error occured while trying to run statistics.py script with the following strategy numbers " + str(strategies), 'red')
             validation_can_run = False
 
         ### Check if strategy_validation.py script can be ran
         if not(validation_can_run):
-            cprint("[ERROR]\t\tThe script strategy_validation.py cannot be ran, because the statistics.py script failed to run", 'red')   
+            cprint("\n[ERROR]\t\tThe script strategy_validation.py cannot be ran, because the statistics.py script failed to run", 'red')   
         else:
             #### Check if Statistics/exceptional_final.json file exists
-            if not (os.path.isfile(directory + "/Statistics/exceptional_final.json")):
-                cprint("[ERROR]\t\tThe script strategy_validation.py cannot be ran, because the statistics file is absent", 'red')
+            if not (os.path.isfile(directory + "/Statistics/statistics.json")):
+                cprint("\n[ERROR]\t\tThe script strategy_validation.py cannot be ran, because the statistics file is absent", 'red')
             else:
                 #### Load Statistics/exceptional_final.json file contents
-                with open(directory + "/Statistics/exceptional_final.json", "r") as fp:
+                with open(directory + "/Statistics/statistics.json", "r") as fp:
                     statistics = json.load(fp)
 
                 #### Create a dictionary to store parameters for the strategy_validation.py script
@@ -175,6 +174,9 @@ def main(args):
                     except:
                         cprint("[ERROR]\t\tAn error occured while trying to run strategy_validation.py script with the strategy number " + strat, 'red')
                         strategies.remove(strat)
+
+    ## Output to console
+    cprint("\n\n[INFO]\t\tAll tests complete",'blue')
 
 
 
