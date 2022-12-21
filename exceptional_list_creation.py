@@ -104,6 +104,12 @@ def main(args):
             log_text += " and " + strategies[-1]
         cprint(log_text, 'blue')
 
+    ## Check if all directories are populated (so that the sript can properly run)
+    for strategy in strategies:
+        if not (os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/exceptional.json")):
+            cprint("[ERROR]\t\tPlease enter a valid directory that contains results from previous tests. Got: " + directory, 'red')
+            raise SystemExit(1)
+
     ## Create output directories
     try:
         os.mkdir(directory + "/Exceptional_combination")
