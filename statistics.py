@@ -107,10 +107,10 @@ def main(args):
 
     ## Check if all directories are populated (so that the sript can properly run)
     for strategy in strategies:
-        if not (os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/exceptional.json")):
+        if not (os.path.isfile(directory + "/Strategy_" + str(strategy) + "_testing/exceptional.json")):
             cprint("[ERROR]\t\tPlease enter a valid directory that contains results from previous tests. Got: " + directory, 'red')
             raise SystemExit(1)
-        if not (os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/optimized_out.json")):
+        if not (os.path.isfile(directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json")):
             cprint("[ERROR]\t\tPlease enter a valid directory that contains results from previous tests. Got: " + directory, 'red')
             raise SystemExit(1)
 
