@@ -30,7 +30,8 @@ class validateDirectoryParameter(argparse.Action):
             exists = False
             for strategy in range(1, max_nb_strategies + 1):
                 if os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/exceptional.json"):
-                    exists = True
+                    if os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/optimized_out.json"):
+                        exists = True
             if not exists:
                 parser.error(f"Please enter a valid directory that contains results from previous tests. Got: {values}")
         setattr(namespace, self.dest, values)
@@ -96,7 +97,7 @@ def main(args):
         strategies = sorted(set(run_specific_strategies)).copy()
 
     ## Output to console
-    log_text = "\n[INFO]\t\tLaunching exceptional_list_creation.py script for the following strategies: " + strategies[0]
+    log_text = "\n[INFO]\t\tLaunching statistics.py script for the following strategies: " + strategies[0]
     if len(strategies) > 1:
         for strat in strategies[1:-1]:
             log_text += ", " + strat
@@ -108,38 +109,141 @@ def main(args):
         if not (os.path.isfile(directory + "/Strategy_" + str(strategy) + "_testing/exceptional.json")):
             cprint("[ERROR]\t\tPlease enter a valid directory that contains results from previous tests. Got: " + directory, 'red')
             raise SystemExit(1)
+        if not (os.path.isfile(directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json")):
+            cprint("[ERROR]\t\tPlease enter a valid directory that contains results from previous tests. Got: " + directory, 'red')
+            raise SystemExit(1)
 
     ## Create output directories
     try:
-        os.mkdir(directory + "/Exceptional_combination")
+        os.mkdir(directory + "/Statistics")
         if logging:
-            cprint("[INFO]\t\tCreation of " + directory + "/Exceptional_combination directory", 'blue')
+            cprint("[INFO]\t\tCreation of " + directory + "/Statistics directory", 'blue')
     except FileExistsError:
         if logging:
-            cprint("[INFO]\t\tDirectory " + directory + "/Exceptional_combination already exists", 'blue')
+            cprint("[INFO]\t\tDirectory " + directory + "/Statistics already exists", 'blue')
         else:
             None
     except:
         raise
 
-    ## Check if an exceptional file already exists
-    output_file = directory + "/Exceptional_combination/exceptional_final.json"
+    ## Check if an statistics file already exists
+    output_file = directory + "/Statistics/statistics.json"
     if os.path.isfile(output_file):
         with open(output_file, "r") as fp:
             final = json.load(fp)
 
-    ## Open exceptional files
+    ## Loop through strategies
     for strategy in strategies:
-        with open(directory + "/Strategy_" + strategy + "_testing/exceptional.json", "r") as fp:
-            tmp = json.load(fp)
+        ### Output to console if logging is enabled
+        if logging:
+            cprint("\n[INFO]\t\tStarting strategy " + str(strategy) + " statistical analysis", 'blue')
 
-        for coin in tmp:
-            if coin in final:
-                if final[coin]["average"] < tmp[coin]["average"]:
-                    final[coin] = tmp[coin].copy()
+        ### Open exceptional files
+        with open(directory + "/Strategy_" + str(strategy) + "_testing/exceptional.json", "r") as fp:
+            #### Load content from exceptional.json file
+            exceptional = json.load(fp)
+
+            #### Output to console if logging is enabled
+            if logging:
+                cprint("[INFO]\t\tOpening " + directory + "/Strategy_" + str(strategy) + "_testing/exceptional.json file", 'blue')
+        
+        ### Open optimized_out files
+        with open(directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json", "r") as fp:
+            #### Load content from optimized_out.json file
+            optimized_out = json.load(fp)
+
+            #### Output to console if logging is enabled
+            if logging:
+                cprint("[INFO]\t\tOpening " + directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json file", 'blue')
+
+        ### Variable initialization exceptional
+        number_of_exceptional_entries_by_losses = {}
+        number_of_exceptional_entries_by_ema_window = {}
+
+        #### Output to console if logging is enabled
+        if logging:
+            cprint("[INFO]\t\tStarting analysis of " + directory + "/Strategy_" + str(strategy) + "_testing/exceptional.json file", 'blue')
+
+        ### Loop through exceptional entries
+        for coin in exceptional:
+            #### Loss entries numbers calculation
+            current_loss = exceptional[coin]["sl"]
+            if not (current_loss in number_of_exceptional_entries_by_losses):
+                number_of_exceptional_entries_by_losses[current_loss]  = 1
             else:
-                final[coin] = tmp[coin].copy()
-    
+                number_of_exceptional_entries_by_losses[current_loss] += 1
+
+            #### EMA entries numbers calculation
+            current_ema  = exceptional[coin]["ema_window"]
+            if not (current_ema in number_of_exceptional_entries_by_ema_window):
+                number_of_exceptional_entries_by_ema_window[current_ema]  = 1
+            else:
+                number_of_exceptional_entries_by_ema_window[current_ema] += 1
+        
+        ### Maximums from exceptional entries
+        max_loss_exceptional    = max(number_of_exceptional_entries_by_losses, key=number_of_exceptional_entries_by_losses.get)
+        max_loss_exceptional_nb = max(number_of_exceptional_entries_by_losses.values())
+        max_ema_exceptional     = max(number_of_exceptional_entries_by_ema_window, key=number_of_exceptional_entries_by_ema_window.get)
+        max_ema_exceptional_nb  = max(number_of_exceptional_entries_by_ema_window.values())
+
+        ### Variable initialization exceptional bis
+        number_of_exceptional_entries_by_ema_window_with_losses = {}
+
+        ### Loop through exceptional entries bis
+        for coin in exceptional:
+            #### Loss entries numbers calculation
+            current_loss = exceptional[coin]["sl"]
+            if current_loss == max_loss_exceptional:
+                current_ema = exceptional[coin]["ema_window"]
+                if not (current_ema in number_of_exceptional_entries_by_ema_window_with_losses):    
+                    number_of_exceptional_entries_by_ema_window_with_losses[current_ema]  = 1
+                else:
+                    number_of_exceptional_entries_by_ema_window_with_losses[current_ema] += 1
+
+        max_ema_for_max_loss    = max(number_of_exceptional_entries_by_ema_window_with_losses, key=number_of_exceptional_entries_by_ema_window_with_losses.get)
+        max_ema_for_max_loss_nb = max(number_of_exceptional_entries_by_ema_window_with_losses.values())
+
+        ### Variable initialization optimized
+        number_of_optimized_entries_by_losses = {}
+        number_of_optimized_entries_by_ema_window = {}
+        max_ema_optimized_for_exceptional_ema_for_max_loss = 0
+
+        #### Output to console
+        cprint("[INFO]\t\tStarting analysis of " + directory + "/Strategy_" + str(strategy) + "_testing/optimized_out.json file", 'blue')
+
+        ### Loop through optimized_out entries
+        for coin in optimized_out["results"]:         
+            #### Loss entries numbers calculation
+            current_loss = optimized_out["results"][coin]["sl"]
+            if not (current_loss in number_of_optimized_entries_by_losses):
+                number_of_optimized_entries_by_losses[current_loss]  = 1
+            else:
+                number_of_optimized_entries_by_losses[current_loss] += 1
+
+            #### EMA entries numbers calculation
+            current_ema  = optimized_out["results"][coin]["ema_window"]
+            if not (current_ema in number_of_optimized_entries_by_ema_window):
+                number_of_optimized_entries_by_ema_window[current_ema]  = 1
+            else:
+                number_of_optimized_entries_by_ema_window[current_ema] += 1
+
+            #### EMA entries numbers calculation bis
+            current_ema  = optimized_out["results"][coin]["ema_window"]
+            if current_ema == max_ema_for_max_loss:
+                max_ema_optimized_for_exceptional_ema_for_max_loss += 1
+
+        ### Maximums from exceptional entries
+        max_loss_optimized    = max(number_of_optimized_entries_by_losses, key=number_of_optimized_entries_by_losses.get)
+        max_loss_optimized_nb = max(number_of_optimized_entries_by_losses.values())
+        max_ema_optimized     = max(number_of_optimized_entries_by_ema_window, key=number_of_optimized_entries_by_ema_window.get)
+        max_ema_optimized_nb  = max(number_of_optimized_entries_by_ema_window.values())
+
+        ### Return extraction
+        optimized_return_average = optimized_out["average"]
+
+        ### Add results to final dictionnary
+        final["strategy_" + str(strategy)] = {"Average": optimized_return_average, "Exceptional": {"Most frequent losses": {str(max_loss_exceptional): max_loss_exceptional_nb}, "Most frequent EMA": {str(max_ema_exceptional): max_ema_exceptional_nb}, "Most frequent EMA for most frequent loss": {str(max_ema_for_max_loss): max_ema_for_max_loss_nb}}, "Optimized": {str(max_loss_optimized): max_loss_optimized_nb, str(max_ema_optimized): max_ema_optimized_nb, str(max_ema_for_max_loss).split('.')[0]+"_exceptional": max_ema_optimized_for_exceptional_ema_for_max_loss}}
+
     ## Format JSON
     formatted_final = json.dumps(final, sort_keys=True, indent=4)
 
@@ -149,7 +253,7 @@ def main(args):
         print(colorful)
     
     ## Write exceptional to file
-    output_file = directory + "/Exceptional_combination/exceptional_final.json"
+    output_file = directory + "/Statistics/statistics.json"
     with open(output_file, "w") as fp:
         fp.write(json.dumps(final, sort_keys=True, indent=4))
 
