@@ -1,0 +1,93 @@
+{
+    "ANTUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 188.66488228649996
+    },
+    "AXSUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 123.85202494000008
+    },
+    "DOGEUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 349.27430915337493
+    },
+    "ENSUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 110.11393991499992
+    },
+    "FXSUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 116.01036565450002
+    },
+    "HIVEUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 183.12865207159984
+    },
+    "MDXUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 117.06420229659993
+    },
+    "POLYUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 362.6377430855499
+    },
+    "PUNDIXUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 578.5702621685001
+    },
+    "PYRUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 258.198551855
+    },
+    "REQUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 119.06939962075008
+    },
+    "SFPUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 138.05364048900003
+    },
+    "XMRUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 135.7288608
+    }
+}
