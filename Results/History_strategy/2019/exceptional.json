@@ -1,0 +1,42 @@
+{
+    "ALGOUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100,
+        "coin": "ALGOUSDT",
+        "strategy": "2",
+        "average": 102.16009703850003
+    },
+    "OMGUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 200,
+        "coin": "OMGUSDT",
+        "strategy": "2",
+        "average": 146.29443297465002
+    },
+    "ONEUSDT": {
+        "sl": 0.9,
+        "tp": 1.15,
+        "ema_window": 20,
+        "coin": "ONEUSDT",
+        "strategy": "3",
+        "average": 172.73501930467506
+    },
+    "TFUELUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 200,
+        "coin": "TFUELUSDT",
+        "strategy": "2",
+        "average": 235.5837755177316
+    },
+    "WINUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50,
+        "coin": "WINUSDT",
+        "strategy": "3",
+        "average": 141.5256347103539
+    }
+}
