@@ -1,0 +1,191 @@
+{
+    "ADAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 202.53544175019994
+    },
+    "ALGOUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 335.07902132924994
+    },
+    "ANTUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 238.93056972384989
+    },
+    "ATOMUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 172.64749917349988
+    },
+    "BATUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 372.30192301889997
+    },
+    "BNBUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 787.5904770342498
+    },
+    "CRVUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 127.18459929749994
+    },
+    "CVCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 149.32313841322488
+    },
+    "ENJUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 469.7803054360848
+    },
+    "ETCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 183.35924109914993
+    },
+    "ETHUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 106.92198108499997
+    },
+    "GNOUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 128.59653154999998
+    },
+    "HNTUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 2123.3622239209994
+    },
+    "ILVUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 175.95657414999994
+    },
+    "KLAYUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 221.2064634137999
+    },
+    "LRCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 220.20190269756003
+    },
+    "LUNAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 1894.2120688461991
+    },
+    "MANAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 1029.6727627454197
+    },
+    "MATICUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 4370.9710971274735
+    },
+    "MDXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 220.40232814304997
+    },
+    "ONEUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 1653.2174580550445
+    },
+    "SOLUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 1733.7357819694494
+    },
+    "TFUELUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 352.7681248122753
+    },
+    "THETAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 110.89487058527492
+    },
+    "TRXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 149.50101926869485
+    },
+    "TUSDUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 104.22094988799999
+    },
+    "VETUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 121.783346230441
+    }
+}
