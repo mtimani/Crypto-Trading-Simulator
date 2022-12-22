@@ -255,8 +255,8 @@ def parse_command_line():
     ## Arguments
     parser.add_argument("-l", "--logging", action='store_true', dest="logging", help="enable logging in the console")
     parser.add_argument("-y", "--year", dest="year", help="specify the year to validate the strategy (allowed values: from 2017 to " + str(max_allowed_year) + ")", required=False, default=max_allowed_year, action=validateYearParameter)
+    parser.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and " + str(max_nb_strategies), required=False, action=validateStrategyParameter)
     required.add_argument("-d", "--directory", dest="directory", help="directory that will store results", required=True, action=validateDirectoryParameter)
-    required.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and " + str(max_nb_strategies), required=False, action=validateStrategyParameter)
     required.add_argument("-m", "--max-losses", dest="max_losses", help="maximum loss percentage accepted by the strategy (allowed values between 1 and 9)", required=True, action=validateMaxLossesParameter)
     required.add_argument("-e", "--ema-window", dest="ema_window", help="EMA window size (allowed values: 20, 50, 100, 200)", required=True, action=validateEMAWindowParameter)
     return parser
