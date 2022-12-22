@@ -1,0 +1,100 @@
+{
+    "ADAUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 223.837344989705
+    },
+    "BTCUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 117.82059965000002
+    },
+    "CELRUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 127.41604409031507
+    },
+    "CHZUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 121.249780908093
+    },
+    "CVCUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 104.92762087686502
+    },
+    "ETHUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 181.75660729499995
+    },
+    "HIVEUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 102.4041050476
+    },
+    "INJUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 118.54822701930003
+    },
+    "STXUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 119.67043809330005
+    },
+    "TFUELUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 383.35142648144404
+    },
+    "THETAUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 959.4976108628751
+    },
+    "TRXUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 115.41906993614006
+    },
+    "VETUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 162.86019644726952
+    },
+    "WAVESUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "strategy": "5",
+        "average": 424.8162056284001
+    }
+}
