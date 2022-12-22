@@ -1,0 +1,100 @@
+{
+    "BNBUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 104.67440295119997
+    },
+    "BTCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 224.64313553999995
+    },
+    "CHZUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 151.56631818242005
+    },
+    "CVCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 284.9802578850549
+    },
+    "ETHUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 284.5891937149999
+    },
+    "HBARUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 186.21219889412484
+    },
+    "HIVEUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 103.72631702535003
+    },
+    "LUNAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 104.62959605370001
+    },
+    "RUNEUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 133.9339235353
+    },
+    "SXPUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 182.33786842200004
+    },
+    "WAVESUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 597.3676454782999
+    },
+    "XMRUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 100.35381902
+    },
+    "ZILUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 1212.3751515920146
+    },
+    "ZRXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "2",
+        "average": 132.54097536409995
+    }
+}
