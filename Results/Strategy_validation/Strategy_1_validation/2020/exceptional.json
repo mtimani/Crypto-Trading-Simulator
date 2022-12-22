@@ -1,0 +1,51 @@
+{
+    "AAVEUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 131.9888561240001
+    },
+    "HOTUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 238.14029159925303
+    },
+    "JSTUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 116.79216846399498
+    },
+    "SOLUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 152.17507716699984
+    },
+    "STORJUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 115.39339738215
+    },
+    "XLMUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 384.09430565526503
+    },
+    "ZENUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 160.08785952600005
+    }
+}
