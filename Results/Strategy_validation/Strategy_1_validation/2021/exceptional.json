@@ -1,0 +1,37 @@
+{
+    "AAVEUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 196.04109763650015
+    },
+    "INJUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 152.3854195532001
+    },
+    "KNCUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 265.6666504705
+    },
+    "UMAUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 277.9530466204998
+    },
+    "XLMUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "strategy": "1",
+        "average": 113.20562325567991
+    }
+}
