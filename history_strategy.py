@@ -28,7 +28,6 @@ client = Client()
 
 
 #-----------Global variables------------#
-max_nb_strategies = 3
 max_allowed_year = int(datetime.date.today().strftime("%Y"))
 exceptional_old = {}
 exceptional_new = {}
@@ -95,6 +94,16 @@ class DataTrader(Strategy):
                 self.buy(sl = self.sl, tp = self.tp)
             elif crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 < self.ema_2:
                 self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "4":
+            if crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 < self.ema_2:
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 > self.ema_2:
+                self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "5":
+            if crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 > self.ema_2:
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 < self.ema_2:
+                self.sell(sl = self.tp, tp = self.sl)
 
 
 
@@ -103,7 +112,6 @@ def worker_f(directory, year, logging):
     ## Variable initialization
     results = {}
 
-    global max_nb_strategies
     global exceptional_old
     global exceptional_new
 
