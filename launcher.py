@@ -8,6 +8,7 @@ import json
 import os
 import os.path
 import subprocess
+import datetime
 from pygments import highlight
 from pygments.formatters.terminal256 import Terminal256Formatter
 from pygments.lexers.web import JsonLexer
@@ -17,6 +18,8 @@ from termcolor import colored, cprint
 
 #-----------Global variables------------#
 max_nb_strategies = 3
+max_allowed_year = int(datetime.date.today().strftime("%Y"))
+min_allowed_year = 2017
 
 
 
@@ -73,6 +76,7 @@ def parse_command_line():
 def main(args):
     ## Variables
     global max_nb_strategies
+    global max_allowed_year
     directory               = args.directory
     logging                 = args.logging
     run_all_strategies      = args.all
@@ -100,7 +104,7 @@ def main(args):
     ## Launching strategy_testing.py script
     for strat in strategies:
         try:
-            bashCommand = "./strategy_testing.py -d " + directory + " -s " + strat
+            bashCommand = "python3 strategy_testing.py -d " + directory + " -s " + strat
             if logging:
                 bashCommand += " -l"
             os.system(bashCommand)
@@ -120,7 +124,7 @@ def main(args):
 
         ### Launching exceptional_list_creation.py script
         try:
-            bashCommand = "./exceptional_list_creation.py -d " + directory + " -s " + strategies_str
+            bashCommand = "python3 exceptional_list_creation.py -d " + directory + " -s " + strategies_str
             if logging:
                 bashCommand += " -l"
             os.system(bashCommand)
@@ -129,7 +133,7 @@ def main(args):
 
         ### Launching statistics.py script
         try:
-            bashCommand = "./statistics.py -d " + directory + " -s " + strategies_str
+            bashCommand = "python3 statistics.py -d " + directory + " -s " + strategies_str
             if logging:
                 bashCommand += " -l"
             os.system(bashCommand)
@@ -167,13 +171,27 @@ def main(args):
                     try:
                         losses = int(100 - float(to_validate[strat]["sl"])*100)
                         ema    = int(float(to_validate[strat]["ema"]))
-                        bashCommand = "./strategy_validation.py -d " + directory + " -s " + strat + " -m " + str(losses) + " -e " + str(ema)
+                        bashCommand = "python3 strategy_validation.py -d " + directory + " -s " + strat + " -m " + str(losses) + " -e " + str(ema)
                         if logging:
                             bashCommand += " -l"
                         os.system(bashCommand)
                     except:
                         cprint("[ERROR]\t\tAn error occured while trying to run strategy_validation.py script with the strategy number " + strat, 'red')
                         strategies.remove(strat)
+    
+    ## Launch history_strategy.py script
+    try:
+        ### Check if 
+        if not(os.path.isfile(directory + "/Exceptional_combination/exceptional_final.json")):
+            cprint("[ERROR]\t\tAn error occured while trying to run history_strategy.py script, " + directory + "/Exceptional_combination/exceptional_final.json file is absent", 'red')
+        else:
+            for year in range(max_allowed_year - 3,max_allowed_year):
+                bashCommand = "python3 history_strategy.py -d " + directory + " -y " + str(year)
+                if logging:
+                    bashCommand += " -l"
+                os.system(bashCommand)
+    except:
+        cprint("[ERROR]\t\tAn error occured while trying to run history_strategy.py script", 'red')
 
     ## Output to console
     cprint("\n\n[INFO]\t\tAll tests complete",'blue')
