@@ -186,7 +186,7 @@ def main(args):
         if not(os.path.isfile(directory + "/Exceptional_combination/exceptional_final.json")):
             cprint("[ERROR]\t\tAn error occured while trying to run history_strategy.py script, " + directory + "/Exceptional_combination/exceptional_final.json file is absent", 'red')
         else:
-            for year in range(max_allowed_year - 3,max_allowed_year):
+            for year in range(max_allowed_year - 3, max_allowed_year + 1):
                 bashCommand = "python3 history_strategy.py -d " + directory + " -y " + str(year)
                 if logging:
                     bashCommand += " -l"
