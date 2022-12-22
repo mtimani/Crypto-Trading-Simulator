@@ -1,4 +1,4 @@
-# Trading
+# Trading Crypto Simulator
 Trading Bot allowing to simulate different trading strategies
 
 
