@@ -1,0 +1,93 @@
+{
+    "ANKRUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 411.20968796896574
+    },
+    "BNBUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 104.67440295119997
+    },
+    "BTCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 194.81889664999997
+    },
+    "CVCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 284.5587805894349
+    },
+    "DOGEUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 190.81730858848948
+    },
+    "ETHUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 284.5891937149999
+    },
+    "HBARUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 186.2120252746999
+    },
+    "HIVEUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 103.40314286910007
+    },
+    "INJUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 146.48003518039997
+    },
+    "NEOUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 154.883851234
+    },
+    "XMRUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 100.35381902
+    },
+    "ZILUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 1212.3753121400846
+    },
+    "ZRXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "strategy": "3",
+        "average": 423.2007242815
+    }
+}
