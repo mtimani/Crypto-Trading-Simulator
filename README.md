@@ -110,3 +110,20 @@ required arguments:
   -e EMA_WINDOW, --ema-window EMA_WINDOW
                         EMA window size (allowed values: 20, 50, 100, 200)
 ```
+
+### history_strategy.py
+This script allows to backtest the exceptional result strategies of the current year on previous years  
+**This script must be ran only after the execution of the exceptional_list_creation.py script is complete**  
+
+```
+usage: history_strategy.py [-h] [-l] [-y YEAR] -d DIRECTORY
+
+options:
+  -h, --help            show this help message and exit
+  -l, --logging         enable logging in the console
+  -y YEAR, --year YEAR  specify the year to test the history strategy (allowed values: from 2017 to 2022)
+
+required arguments:
+  -d DIRECTORY, --directory DIRECTORY
+                        directory that will store results
+```
