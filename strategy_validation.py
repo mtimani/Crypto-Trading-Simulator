@@ -35,7 +35,7 @@ coins = ["AAVEUSDT","ABBCUSDT","ADAUSDT","ALGOUSDT","AMPUSDT","ANKRUSDT","ANTUSD
 #-----------Global variables------------#
 strategy = 0
 max_allowed_year = int(datetime.date.today().strftime("%Y"))
-max_nb_strategies = 3
+max_nb_strategies = 5
 exceptional = {}
 
 
@@ -100,6 +100,16 @@ class DataTrader(Strategy):
             if crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 > self.ema_2:
                 self.buy(sl = self.sl, tp = self.tp)
             elif crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 < self.ema_2:
+                self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "4":
+            if crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 < self.ema_2:
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 > self.ema_2:
+                self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "5":
+            if crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 > self.ema_2:
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 < self.ema_2:
                 self.sell(sl = self.tp, tp = self.sl)
 
 
