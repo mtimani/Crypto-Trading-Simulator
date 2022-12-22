@@ -1,0 +1,621 @@
+{
+    "average": -27.871724502080042,
+    "results": {
+        "AAVEUSDT": {
+            "sl": 0.97,
+            "tp": 1.045,
+            "ema_window": 50,
+            "strategy": "1",
+            "return": 189.5669501675
+        },
+        "ADAUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "ALGOUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": 21.33042521614992
+        },
+        "ANKRUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "5",
+            "return": -100.0
+        },
+        "ANTUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 20,
+            "strategy": "4",
+            "return": -2.154302074350024
+        },
+        "ATOMUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 200,
+            "strategy": "2",
+            "return": -50.66000712950004
+        },
+        "AUDIOUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 50,
+            "strategy": "2",
+            "return": 83.94780521046997
+        },
+        "AVAXUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": 13.520649619900011
+        },
+        "AXSUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -5.49554562145994
+        },
+        "BALUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 100,
+            "strategy": "1",
+            "return": 9.968205690999937
+        },
+        "BATUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -15.316164418900009
+        },
+        "BCHUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 50,
+            "strategy": "2",
+            "return": -86.25092102500001
+        },
+        "BNBUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -52.45256398180004
+        },
+        "CELRUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": 73.564936379955
+        },
+        "CHRUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -35.474565137750005
+        },
+        "CHZUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 50,
+            "strategy": "1",
+            "return": -97.67710171098003
+        },
+        "COMPUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": -100.0
+        },
+        "CRVUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 20,
+            "strategy": "5",
+            "return": 22.79462106149999
+        },
+        "CVCUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": 121.12794279535002
+        },
+        "DASHUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": -85.3543757
+        },
+        "DCRUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 200,
+            "strategy": "1",
+            "return": -47.89795845899999
+        },
+        "DGBUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -15.17329119575501
+        },
+        "DOGEUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 200,
+            "strategy": "1",
+            "return": -14.671524752903498
+        },
+        "DOTUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -75.16962106679999
+        },
+        "EGLDUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -78.53590417250001
+        },
+        "ENJUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -6.838739464794983
+        },
+        "EOSUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": -11.567737683950035
+        },
+        "ETCUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 50,
+            "strategy": "4",
+            "return": -33.117202999750035
+        },
+        "FILUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 50,
+            "strategy": "5",
+            "return": 18.319200874000003
+        },
+        "FTMUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": 35.74259755720495
+        },
+        "GRTUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": 0.0
+        },
+        "HBARUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 200,
+            "strategy": "2",
+            "return": 13.067234639615025
+        },
+        "HIVEUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -33.25796639895003
+        },
+        "HNTUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": -100.0
+        },
+        "HOTUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": -97.348301368375
+        },
+        "ICXUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "INJUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 200,
+            "strategy": "1",
+            "return": -50.136243117599975
+        },
+        "IOSTUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "IOTXUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "JSTUSDT": {
+            "sl": 0.97,
+            "tp": 1.045,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": -51.38182066603994
+        },
+        "KAVAUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -28.738984621049983
+        },
+        "KNCUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 20,
+            "strategy": "5",
+            "return": 69.15473561400003
+        },
+        "KSMUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": -63.82432012049999
+        },
+        "LINKUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 50,
+            "strategy": "4",
+            "return": -79.45388994159997
+        },
+        "LRCUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": 23.687169919929918
+        },
+        "LSKUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 100,
+            "strategy": "4",
+            "return": -61.412939605149916
+        },
+        "MANAUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": -8.96220011468498
+        },
+        "MATICUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 20,
+            "strategy": "5",
+            "return": -91.442979313855
+        },
+        "MKRUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": -29.84123538999993
+        },
+        "NEARUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -56.44022077049999
+        },
+        "NEOUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -58.114438556
+        },
+        "OCEANUSDT": {
+            "sl": 0.97,
+            "tp": 1.045,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": 73.95123631550008
+        },
+        "OMGUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 200,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "ONEUSDT": {
+            "sl": 0.9,
+            "tp": 1.15,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": -36.336010666964995
+        },
+        "ONGUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 100,
+            "strategy": "1",
+            "return": 13.717947920199919
+        },
+        "ONTUSDT": {
+            "sl": 0.97,
+            "tp": 1.045,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": 10.891023060899984
+        },
+        "QTUMUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": 25.2788312515
+        },
+        "RLCUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 50,
+            "strategy": "1",
+            "return": -97.88647852600002
+        },
+        "ROSEUSDT": {
+            "sl": 0.98,
+            "tp": 1.03,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": 9.413216136780001
+        },
+        "RSRUSDT": {
+            "sl": 0.9,
+            "tp": 1.15,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -100.0
+        },
+        "RVNUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -26.465458346909987
+        },
+        "SANDUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": 23.367099574253515
+        },
+        "SCUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -2.825697168101993
+        },
+        "SKLUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": -38.186140168
+        },
+        "SNXUSDT": {
+            "sl": 0.94,
+            "tp": 1.09,
+            "ema_window": 100,
+            "strategy": "4",
+            "return": 108.22632196900001
+        },
+        "SOLUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 100,
+            "strategy": "2",
+            "return": -55.428926134800015
+        },
+        "STORJUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -33.272371032950005
+        },
+        "STXUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": 220.75972970000004
+        },
+        "SUSHIUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -100.0
+        },
+        "SXPUSDT": {
+            "sl": 0.92,
+            "tp": 1.12,
+            "ema_window": 200,
+            "strategy": "2",
+            "return": -72.6566057695
+        },
+        "TFUELUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 200,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "THETAUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "2",
+            "return": -100.0
+        },
+        "TRXUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 100,
+            "strategy": "1",
+            "return": -10.988284943395003
+        },
+        "UMAUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": 10.534941824500027
+        },
+        "UNIUSDT": {
+            "sl": 0.99,
+            "tp": 1.015,
+            "ema_window": 50,
+            "strategy": "4",
+            "return": -32.57666096820005
+        },
+        "USDCUSDT": {
+            "sl": 0.9,
+            "tp": 1.15,
+            "ema_window": 100,
+            "strategy": "4",
+            "return": -0.3294328859999805
+        },
+        "VETUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": -31.605270592998032
+        },
+        "WAVESUSDT": {
+            "sl": 0.97,
+            "tp": 1.045,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": -57.53494772355001
+        },
+        "WINUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "3",
+            "return": -48.598537000228596
+        },
+        "XEMUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 200,
+            "strategy": "2",
+            "return": -22.35238524599999
+        },
+        "XLMUSDT": {
+            "sl": 0.97,
+            "tp": 1.045,
+            "ema_window": 50,
+            "strategy": "5",
+            "return": -88.26012421586003
+        },
+        "XMRUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 50,
+            "strategy": "1",
+            "return": -71.94143032
+        },
+        "XTZUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "5",
+            "return": -30.49721570809999
+        },
+        "YFIUSDT": {
+            "sl": 0.91,
+            "tp": 1.135,
+            "ema_window": 20,
+            "strategy": "1",
+            "return": -7.086932540000008
+        },
+        "ZECUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 100,
+            "strategy": "5",
+            "return": -100.0
+        },
+        "ZENUSDT": {
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 20,
+            "strategy": "3",
+            "return": 15.077963221499987
+        },
+        "ZILUSDT": {
+            "sl": 0.96,
+            "tp": 1.06,
+            "ema_window": 50,
+            "strategy": "2",
+            "return": -75.147385796995
+        },
+        "ZRXUSDT": {
+            "sl": 0.95,
+            "tp": 1.075,
+            "ema_window": 20,
+            "strategy": "2",
+            "return": -95.58317956970002
+        }
+    }
+}
