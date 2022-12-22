@@ -169,7 +169,7 @@ def worker_f(directory, year, logging):
     formatted_final = json.dumps(final, indent=4)
 
     ## Write into output directory
-    output_dir = directory + "/History_strategy_" + year + "/"
+    output_dir = directory + "/History_strategy/History_strategy/" + year + "/"
     output_file = output_dir + "optimized_out.json"
     
     with open(output_file, "w") as fp:
@@ -222,7 +222,7 @@ def parse_command_line():
 
     ## Arguments
     parser.add_argument("-l", "--logging", action='store_true', dest="logging", help="enable logging in the console")
-    parser.add_argument("-y", "--year", dest="year", help="specify the year to test the history strategy (allowed values: from 2017 to " + str(max_allowed_year) + ")", required=False, default="2022", action=validateYearParameter)
+    parser.add_argument("-y", "--year", dest="year", help="specify the year to test the history strategy (allowed values: from 2017 to " + str(max_allowed_year) + ")", required=False, default=max_allowed_year, action=validateYearParameter)
     required.add_argument("-d", "--directory", dest="directory", help="directory that will store results", required=True, action=validateDirectoryParameter)
     return parser
 
@@ -243,12 +243,24 @@ def main(args):
 
     ## Create output directories
     try:
-        os.mkdir(directory + "/History_strategy_" + year)
+        os.mkdir(directory + "/History_strategy/")
         if logging:
-            cprint("[INFO]\t\tCreation of " + directory + "/History_strategy_" + year + " directory", 'blue')
+            cprint("[INFO]\t\tCreation of " + directory + "/History_strategy/ directory", 'blue')
     except FileExistsError:
         if logging:
-            cprint("[INFO]\t\tDirectory " + directory + "/History_strategy_" + year + " already exists", 'blue')
+            cprint("[INFO]\t\tDirectory " + directory + "/History_strategy/ already exists", 'blue')
+        else:
+            None
+    except:
+        raise
+
+    try:
+        os.mkdir(directory + "/History_strategy/" + year)
+        if logging:
+            cprint("[INFO]\t\tCreation of " + directory + "/History_strategy/" + year + " directory", 'blue')
+    except FileExistsError:
+        if logging:
+            cprint("[INFO]\t\tDirectory " + directory + "/History_strategy/" + year + " already exists", 'blue')
         else:
             None
     except:
@@ -265,7 +277,7 @@ def main(args):
     worker_f(directory, year, logging)
 
     ## Write exceptional to file
-    output_file = directory + "/History_strategy_" + year + "/exceptional.json"
+    output_file = directory + "/History_strategy/History_strategy/" + year + "/exceptional.json"
     with open(output_file, "w") as fp:
         fp.write(json.dumps(exceptional_new, indent=4))
 
