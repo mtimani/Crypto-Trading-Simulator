@@ -1,0 +1,658 @@
+{
+    "ADAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "ADAUSDT",
+        "strategy": "3",
+        "average": 259.20113685695003
+    },
+    "ALGOUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 20.0,
+        "coin": "ALGOUSDT",
+        "strategy": "3",
+        "average": 344.1159812395499
+    },
+    "AMPUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 100.0,
+        "coin": "AMPUSDT",
+        "strategy": "3",
+        "average": 642.84084392903
+    },
+    "ANKRUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "coin": "ANKRUSDT",
+        "strategy": "3",
+        "average": 125.22280118744509
+    },
+    "ASTRUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "coin": "ASTRUSDT",
+        "strategy": "3",
+        "average": 133.48103945220006
+    },
+    "ATOMUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 50.0,
+        "coin": "ATOMUSDT",
+        "strategy": "3",
+        "average": 138.54514892500006
+    },
+    "AUDIOUSDT": {
+        "sl": 0.99,
+        "tp": 1.015,
+        "ema_window": 20.0,
+        "coin": "AUDIOUSDT",
+        "strategy": "3",
+        "average": 116.39300786340007
+    },
+    "AVAXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "AVAXUSDT",
+        "strategy": "3",
+        "average": 381.44205035000005
+    },
+    "AXSUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 100.0,
+        "coin": "AXSUSDT",
+        "strategy": "3",
+        "average": 191.14012584500009
+    },
+    "BATUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "coin": "BATUSDT",
+        "strategy": "3",
+        "average": 258.8176818501002
+    },
+    "BCHUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 50.0,
+        "coin": "BCHUSDT",
+        "strategy": "3",
+        "average": 132.6762284
+    },
+    "BNXUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "coin": "BNXUSDT",
+        "strategy": "3",
+        "average": 137.85103255000004
+    },
+    "CELOUSDT": {
+        "sl": 0.99,
+        "tp": 1.015,
+        "ema_window": 20.0,
+        "coin": "CELOUSDT",
+        "strategy": "3",
+        "average": 101.22673668600028
+    },
+    "CHRUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "coin": "CHRUSDT",
+        "strategy": "3",
+        "average": 351.40776103405005
+    },
+    "COMPUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "COMPUSDT",
+        "strategy": "3",
+        "average": 208.5603350250001
+    },
+    "CRVUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 100.0,
+        "coin": "CRVUSDT",
+        "strategy": "3",
+        "average": 173.35800990349986
+    },
+    "CVCUSDT": {
+        "sl": 0.9,
+        "tp": 1.15,
+        "ema_window": 100.0,
+        "coin": "CVCUSDT",
+        "strategy": "3",
+        "average": 136.53324903649997
+    },
+    "DASHUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 50.0,
+        "coin": "DASHUSDT",
+        "strategy": "3",
+        "average": 103.09861190000007
+    },
+    "DOTUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 100.0,
+        "coin": "DOTUSDT",
+        "strategy": "3",
+        "average": 283.653649178
+    },
+    "EGLDUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 100.0,
+        "coin": "EGLDUSDT",
+        "strategy": "3",
+        "average": 222.44322089000005
+    },
+    "ENJUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 100.0,
+        "coin": "ENJUSDT",
+        "strategy": "3",
+        "average": 431.8228619325001
+    },
+    "EOSUSDT": {
+        "sl": 0.99,
+        "tp": 1.015,
+        "ema_window": 20.0,
+        "coin": "EOSUSDT",
+        "strategy": "3",
+        "average": 158.51085442399992
+    },
+    "FTMUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 20.0,
+        "coin": "FTMUSDT",
+        "strategy": "3",
+        "average": 441.90734112025007
+    },
+    "GALAUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "coin": "GALAUSDT",
+        "strategy": "3",
+        "average": 798.5350358860054
+    },
+    "GLMRUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 100.0,
+        "coin": "GLMRUSDT",
+        "strategy": "3",
+        "average": 189.3746675431001
+    },
+    "GMTUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "coin": "GMTUSDT",
+        "strategy": "3",
+        "average": 137.57648254757012
+    },
+    "GNOUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 20.0,
+        "coin": "GNOUSDT",
+        "strategy": "3",
+        "average": 208.76212084999997
+    },
+    "GRTUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "coin": "GRTUSDT",
+        "strategy": "3",
+        "average": 387.7261113125999
+    },
+    "HBARUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 50.0,
+        "coin": "HBARUSDT",
+        "strategy": "3",
+        "average": 381.7194450620001
+    },
+    "HNTUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 50.0,
+        "coin": "HNTUSDT",
+        "strategy": "3",
+        "average": 316.512140835
+    },
+    "HOTUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 20.0,
+        "coin": "HOTUSDT",
+        "strategy": "3",
+        "average": 190.48030863896204
+    },
+    "ICPUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 100.0,
+        "coin": "ICPUSDT",
+        "strategy": "3",
+        "average": 370.48924589449996
+    },
+    "ICXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 20.0,
+        "coin": "ICXUSDT",
+        "strategy": "3",
+        "average": 280.9261926576001
+    },
+    "ILVUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 20.0,
+        "coin": "ILVUSDT",
+        "strategy": "3",
+        "average": 864.4169040000002
+    },
+    "IMXUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "coin": "IMXUSDT",
+        "strategy": "3",
+        "average": 284.708602665
+    },
+    "IOSTUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 50.0,
+        "coin": "IOSTUSDT",
+        "strategy": "3",
+        "average": 227.4700414762999
+    },
+    "IOTXUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "IOTXUSDT",
+        "strategy": "3",
+        "average": 218.50496829529496
+    },
+    "JASMYUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 50.0,
+        "coin": "JASMYUSDT",
+        "strategy": "3",
+        "average": 163.30355679141414
+    },
+    "JSTUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "coin": "JSTUSDT",
+        "strategy": "3",
+        "average": 225.8507654339699
+    },
+    "KAVAUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 20.0,
+        "coin": "KAVAUSDT",
+        "strategy": "3",
+        "average": 245.5214798055
+    },
+    "KDAUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 50.0,
+        "coin": "KDAUSDT",
+        "strategy": "3",
+        "average": 305.3935797345
+    },
+    "KLAYUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 50.0,
+        "coin": "KLAYUSDT",
+        "strategy": "3",
+        "average": 222.84465949619997
+    },
+    "KNCUSDT": {
+        "sl": 0.96,
+        "tp": 1.06,
+        "ema_window": 50.0,
+        "coin": "KNCUSDT",
+        "strategy": "3",
+        "average": 166.25152571750007
+    },
+    "KSMUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 20.0,
+        "coin": "KSMUSDT",
+        "strategy": "3",
+        "average": 422.1031001000002
+    },
+    "LINKUSDT": {
+        "sl": 0.96,
+        "tp": 1.06,
+        "ema_window": 100.0,
+        "coin": "LINKUSDT",
+        "strategy": "3",
+        "average": 112.6019095225
+    },
+    "LPTUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 50.0,
+        "coin": "LPTUSDT",
+        "strategy": "3",
+        "average": 269.77338305
+    },
+    "LRCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "LRCUSDT",
+        "strategy": "3",
+        "average": 248.09564233249995
+    },
+    "LSKUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 50.0,
+        "coin": "LSKUSDT",
+        "strategy": "3",
+        "average": 110.97218650900003
+    },
+    "LUNCUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 50.0,
+        "coin": "LUNCUSDT",
+        "strategy": "3",
+        "average": 128.70585075718387
+    },
+    "MANAUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "coin": "MANAUSDT",
+        "strategy": "3",
+        "average": 546.65228005895
+    },
+    "MINAUSDT": {
+        "sl": 0.96,
+        "tp": 1.06,
+        "ema_window": 50.0,
+        "coin": "MINAUSDT",
+        "strategy": "3",
+        "average": 203.24521188449998
+    },
+    "MKRUSDT": {
+        "sl": 0.99,
+        "tp": 1.015,
+        "ema_window": 20.0,
+        "coin": "MKRUSDT",
+        "strategy": "3",
+        "average": 269.7359755000001
+    },
+    "NEOUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "coin": "NEOUSDT",
+        "strategy": "3",
+        "average": 177.232151915
+    },
+    "OCEANUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 20.0,
+        "coin": "OCEANUSDT",
+        "strategy": "3",
+        "average": 128.40554366695002
+    },
+    "OMGUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 50.0,
+        "coin": "OMGUSDT",
+        "strategy": "3",
+        "average": 270.8007107100001
+    },
+    "ONEUSDT": {
+        "sl": 0.9,
+        "tp": 1.15,
+        "ema_window": 20.0,
+        "coin": "ONEUSDT",
+        "strategy": "3",
+        "average": 1003.34897750193
+    },
+    "ONTUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "coin": "ONTUSDT",
+        "strategy": "3",
+        "average": 143.86553156484996
+    },
+    "PLAUSDT": {
+        "sl": 0.9,
+        "tp": 1.15,
+        "ema_window": 20.0,
+        "coin": "PLAUSDT",
+        "strategy": "3",
+        "average": 315.2906599255
+    },
+    "QTUMUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 50.0,
+        "coin": "QTUMUSDT",
+        "strategy": "3",
+        "average": 180.32416840949998
+    },
+    "ROSEUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "coin": "ROSEUSDT",
+        "strategy": "3",
+        "average": 253.04453823817497
+    },
+    "SANDUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 50.0,
+        "coin": "SANDUSDT",
+        "strategy": "3",
+        "average": 550.5470588975002
+    },
+    "SCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 20.0,
+        "coin": "SCUSDT",
+        "strategy": "3",
+        "average": 216.3331535925301
+    },
+    "SCRTUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 50.0,
+        "coin": "SCRTUSDT",
+        "strategy": "3",
+        "average": 246.34018984150003
+    },
+    "SKLUSDT": {
+        "sl": 0.96,
+        "tp": 1.06,
+        "ema_window": 20.0,
+        "coin": "SKLUSDT",
+        "strategy": "3",
+        "average": 264.6405908555249
+    },
+    "SLPUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "coin": "SLPUSDT",
+        "strategy": "3",
+        "average": 390.35698131434515
+    },
+    "SOLUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "coin": "SOLUSDT",
+        "strategy": "3",
+        "average": 496.1378185800001
+    },
+    "STXUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20.0,
+        "coin": "STXUSDT",
+        "strategy": "3",
+        "average": 368.19584420199993
+    },
+    "SXPUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 50.0,
+        "coin": "SXPUSDT",
+        "strategy": "3",
+        "average": 288.2558279847001
+    },
+    "SYSUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 20.0,
+        "coin": "SYSUSDT",
+        "strategy": "3",
+        "average": 321.38726695135006
+    },
+    "THETAUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "THETAUSDT",
+        "strategy": "3",
+        "average": 188.8271493935
+    },
+    "TRIBEUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 50.0,
+        "coin": "TRIBEUSDT",
+        "strategy": "3",
+        "average": 138.30150880865003
+    },
+    "USDCUSDT": {
+        "sl": 0.9,
+        "tp": 1.15,
+        "ema_window": 20.0,
+        "coin": "USDCUSDT",
+        "strategy": "3",
+        "average": 148.95266043239994
+    },
+    "VETUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 20.0,
+        "coin": "VETUSDT",
+        "strategy": "3",
+        "average": 187.63987337081008
+    },
+    "VGXUSDT": {
+        "sl": 0.99,
+        "tp": 1.015,
+        "ema_window": 50.0,
+        "coin": "VGXUSDT",
+        "strategy": "3",
+        "average": 128.8029580565004
+    },
+    "WAVESUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 20.0,
+        "coin": "WAVESUSDT",
+        "strategy": "3",
+        "average": 348.2699484445002
+    },
+    "WAXPUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 100.0,
+        "coin": "WAXPUSDT",
+        "strategy": "3",
+        "average": 405.64983657715
+    },
+    "WINUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 50.0,
+        "coin": "WINUSDT",
+        "strategy": "3",
+        "average": 241.10707771221036
+    },
+    "XEMUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "coin": "XEMUSDT",
+        "strategy": "3",
+        "average": 150.67496433305
+    },
+    "XLMUSDT": {
+        "sl": 0.95,
+        "tp": 1.075,
+        "ema_window": 50.0,
+        "coin": "XLMUSDT",
+        "strategy": "3",
+        "average": 150.25979922985007
+    },
+    "XTZUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 50.0,
+        "coin": "XTZUSDT",
+        "strategy": "3",
+        "average": 229.417034337
+    },
+    "ZECUSDT": {
+        "sl": 0.96,
+        "tp": 1.06,
+        "ema_window": 20.0,
+        "coin": "ZECUSDT",
+        "strategy": "3",
+        "average": 149.24614220000007
+    },
+    "ZENUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 20.0,
+        "coin": "ZENUSDT",
+        "strategy": "3",
+        "average": 267.12823494500003
+    }
+}
