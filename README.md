@@ -121,7 +121,7 @@ usage: history_strategy.py [-h] [-l] [-y YEAR] -d DIRECTORY
 options:
   -h, --help            show this help message and exit
   -l, --logging         enable logging in the console
-  -y YEAR, --year YEAR  specify the year to test the history strategy (allowed values: from 2017 to 2022)
+  -y YEAR, --year YEAR  specify the year to test the history strategy (allowed values: from 2017 to 2023)
 
 required arguments:
   -d DIRECTORY, --directory DIRECTORY
