@@ -1,5 +1,5 @@
-# Trading Crypto Simulator
-Trading Bot allowing to simulate different trading strategies
+# Crypto Trading Simulator
+Crypto Trading Bot Simulator allowing to simulate different trading strategies
 
 
 ## Installation
