@@ -168,16 +168,17 @@ def main(args):
 
                 #### Run the strategy_validation.py script
                 for strat in strategies:
-                    try:
-                        losses = int(100 - float(to_validate[strat]["sl"])*100)
-                        ema    = int(float(to_validate[strat]["ema"]))
-                        bashCommand = "python3 strategy_validation.py -d " + directory + " -s " + strat + " -m " + str(losses) + " -e " + str(ema)
-                        if logging:
-                            bashCommand += " -l"
-                        os.system(bashCommand)
-                    except:
-                        cprint("[ERROR]\t\tAn error occured while trying to run strategy_validation.py script with the strategy number " + strat, 'red')
-                        strategies.remove(strat)
+                    for year in range(max_allowed_year - 2,max_allowed_year + 1):
+                        try:
+                            losses = int(100 - float(to_validate[strat]["sl"])*100)
+                            ema    = int(float(to_validate[strat]["ema"]))
+                            bashCommand = "python3 strategy_validation.py -d " + directory + " -s " + strat + " -m " + str(losses) + " -e " + str(ema) + " -y " + str(year)
+                            if logging:
+                                bashCommand += " -l"
+                            os.system(bashCommand)
+                        except:
+                            cprint("[ERROR]\t\tAn error occured while trying to run strategy_validation.py script with the strategy number " + strat, 'red')
+                            strategies.remove(strat)
     
     ## Launch history_strategy.py script
     try:
