@@ -1,0 +1,34 @@
+{
+    "AAVEUSDT": {
+        "sl": 0.97,
+        "tp": 1.045,
+        "ema_window": 50,
+        "coin": "AAVEUSDT",
+        "strategy": "1",
+        "average": 189.5669501675
+    },
+    "CVCUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100,
+        "coin": "CVCUSDT",
+        "strategy": "5",
+        "average": 121.12794279535002
+    },
+    "SNXUSDT": {
+        "sl": 0.94,
+        "tp": 1.09,
+        "ema_window": 100,
+        "coin": "SNXUSDT",
+        "strategy": "4",
+        "average": 108.22632196900001
+    },
+    "STXUSDT": {
+        "sl": 0.92,
+        "tp": 1.12,
+        "ema_window": 20,
+        "coin": "STXUSDT",
+        "strategy": "3",
+        "average": 220.75972970000004
+    }
+}
