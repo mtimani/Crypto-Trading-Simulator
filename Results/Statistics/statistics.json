@@ -1,0 +1,97 @@
+{
+    "strategy_1": {
+        "Average": 133.00752745046918,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "20.0": 35
+            },
+            "Most frequent EMA for most frequent loss": {
+                "20.0": 10
+            },
+            "Most frequent losses": {
+                "0.97": 13
+            }
+        },
+        "Optimized": {
+            "0.99": 44,
+            "20.0": 76,
+            "20_exceptional": 76
+        }
+    },
+    "strategy_2": {
+        "Average": 188.7934447860003,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "20.0": 30
+            },
+            "Most frequent EMA for most frequent loss": {
+                "100.0": 8
+            },
+            "Most frequent losses": {
+                "0.93": 21
+            }
+        },
+        "Optimized": {
+            "0.99": 40,
+            "100_exceptional": 37,
+            "20.0": 57
+        }
+    },
+    "strategy_3": {
+        "Average": 142.79525407083366,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "20.0": 35
+            },
+            "Most frequent EMA for most frequent loss": {
+                "50.0": 7
+            },
+            "Most frequent losses": {
+                "0.93": 17
+            }
+        },
+        "Optimized": {
+            "0.99": 38,
+            "20.0": 72,
+            "50_exceptional": 50
+        }
+    },
+    "strategy_4": {
+        "Average": 60.237308286725906,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "100.0": 13
+            },
+            "Most frequent EMA for most frequent loss": {
+                "20.0": 6
+            },
+            "Most frequent losses": {
+                "0.98": 13
+            }
+        },
+        "Optimized": {
+            "0.99": 62,
+            "100.0": 69,
+            "20_exceptional": 46
+        }
+    },
+    "strategy_5": {
+        "Average": 144.8050548172408,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "100.0": 38
+            },
+            "Most frequent EMA for most frequent loss": {
+                "20.0": 9
+            },
+            "Most frequent losses": {
+                "0.92": 21
+            }
+        },
+        "Optimized": {
+            "0.92": 27,
+            "100.0": 69,
+            "20_exceptional": 49
+        }
+    }
+}
