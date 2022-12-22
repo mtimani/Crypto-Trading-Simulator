@@ -1,0 +1,30 @@
+{
+    "AAVEUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 480.0774241180002
+    },
+    "GRTUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 147.97225649829005
+    },
+    "SHIBUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 316.39039525010816
+    },
+    "YFIUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 188.98363758999994
+    }
+}
