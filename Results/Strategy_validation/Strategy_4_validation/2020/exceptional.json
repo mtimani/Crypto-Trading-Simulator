@@ -1,0 +1,30 @@
+{
+    "BCHUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 134.24029013999996
+    },
+    "EOSUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 239.80068724129998
+    },
+    "ETCUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 168.4895832897
+    },
+    "ZENUSDT": {
+        "sl": 0.98,
+        "tp": 1.03,
+        "ema_window": 20.0,
+        "strategy": "4",
+        "average": 212.829695933
+    }
+}
