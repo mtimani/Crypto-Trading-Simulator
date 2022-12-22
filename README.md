@@ -94,17 +94,18 @@ This script allows to validate simulated trading strategies with fixed parameter
 **The script can be ran after the execution of the strategy_testing.py script is complete (not mandatory)**  
 
 ```
-usage: strategy_validation.py [-h] [-l] -d DIRECTORY [-s STRATEGY] -m MAX_LOSSES -e EMA_WINDOW
+usage: strategy_validation.py [-h] [-l] [-y YEAR] [-s STRATEGY] -d DIRECTORY -m MAX_LOSSES -e EMA_WINDOW
 
 options:
   -h, --help            show this help message and exit
   -l, --logging         enable logging in the console
+  -y YEAR, --year YEAR  specify the year to validate the strategy (allowed values: from 2017 to 2023)
+  -s STRATEGY, --strategy STRATEGY
+                        choose strategy between 1 and 3
 
 required arguments:
   -d DIRECTORY, --directory DIRECTORY
                         directory that will store results
-  -s STRATEGY, --strategy STRATEGY
-                        choose strategy between 1 and 3
   -m MAX_LOSSES, --max-losses MAX_LOSSES
                         maximum loss percentage accepted by the strategy (allowed values between 1 and 9)
   -e EMA_WINDOW, --ema-window EMA_WINDOW
