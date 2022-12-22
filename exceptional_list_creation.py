@@ -29,7 +29,7 @@ class validateDirectoryParameter(argparse.Action):
         else:
             exists = False
             for strategy in range(1, max_nb_strategies + 1):
-                if os.path.isfile(values + "/Strategy_" + str(strategy) + "_testing/exceptional.json"):
+                if os.path.isfile(values + "/Strategy_testing/Strategy_" + str(strategy) + "_testing/exceptional.json"):
                     exists = True
             if not exists:
                 parser.error(f"Please enter a valid directory that contains results from previous tests. Got: {values}")
@@ -105,7 +105,7 @@ def main(args):
 
     ## Check if all directories are populated (so that the sript can properly run)
     for strategy in strategies:
-        if not (os.path.isfile(directory + "/Strategy_" + str(strategy) + "_testing/exceptional.json")):
+        if not (os.path.isfile(directory + "/Strategy_testing/Strategy_" + str(strategy) + "_testing/exceptional.json")):
             cprint("[ERROR]\t\tPlease enter a valid directory that contains results from previous tests. Got: " + directory, 'red')
             raise SystemExit(1)
 
@@ -130,7 +130,7 @@ def main(args):
 
     ## Open exceptional files
     for strategy in strategies:
-        with open(directory + "/Strategy_" + strategy + "_testing/exceptional.json", "r") as fp:
+        with open(directory + "/Strategy_testing/Strategy_" + strategy + "_testing/exceptional.json", "r") as fp:
             tmp = json.load(fp)
 
         for coin in tmp:
