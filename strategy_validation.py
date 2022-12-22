@@ -9,6 +9,7 @@ import sys
 import argparse
 import os
 import os.path
+import datetime
 import numpy as np
 from pygments import highlight
 from pygments.formatters.terminal256 import Terminal256Formatter
@@ -33,15 +34,24 @@ coins = ["AAVEUSDT","ABBCUSDT","ADAUSDT","ALGOUSDT","AMPUSDT","ANKRUSDT","ANTUSD
 
 #-----------Global variables------------#
 strategy = 0
-startdate = '2022-01-01'
+max_allowed_year = int(datetime.date.today().strftime("%Y"))
 max_nb_strategies = 3
 exceptional = {}
 
 
 
 #---------Get data from Binance---------#
-def getData(symbol, start):
-    frame = pd.DataFrame(client.get_historical_klines(symbol, '4h', start))
+def getData(symbol, start, end):
+    ## Variable initialization
+    global max_allowed_year
+    end_year = int(end.split("-")[0])
+
+    ## Request to binance
+    if end_year > max_allowed_year:
+        frame = pd.DataFrame(client.get_historical_klines(symbol, '4h', start))
+    else:
+        frame = pd.DataFrame(client.get_historical_klines(symbol, '4h', start, end))
+
     frame = frame[[0,1,2,3,4]]
     frame.columns = ['Date','Open','High','Low','Close']
     frame.Date = pd.to_datetime(frame.Date, unit='ms')
@@ -95,14 +105,16 @@ class DataTrader(Strategy):
 
 
 #--Worker running different strategies--#
-def worker_f(directory, strat, max_losses, ema_window, logging):
+def worker_f(directory, strat, max_losses, ema_window, year, logging):
     ## Variable initialization
     results = {}
 
     global strategy
     strategy = strat 
 
-    global startdate
+    ## Startdate variable initialization
+    startdate   = year + "-01-01"
+    enddate     = str(int(year) + 1) + "-01-01"
 
     ## Variable init for average calculations
     sum_of_values = 0
@@ -112,7 +124,7 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
     for coin in coins:
         try:
             ### Backtesting for specific coin
-            df = getData(coin, startdate)
+            df = getData(coin, startdate, enddate)
             bt = Backtest(df, DataTrader, cash = 100000, commission = 0.0015)
             with np.errstate(invalid='ignore'):
                 output = bt.optimize(loss=[int(max_losses)],window_1=[int(ema_window)])
@@ -137,12 +149,12 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
         except BinanceAPIException as e:
             ### Warning output to console if logging is enabled
             if logging:
-                cprint("[WARNING]\tCoin " + coin + " is not available with sl = " + str(sl_p) + ", tp = " + str(tp_p) + " and window = " + str(window), 'yellow')
+                cprint("[WARNING]\tCoin " + coin + " is not available with sl = " + str(sl_p) + ", tp = " + str(tp_p) + ", window = " + str(window) + " and year = " + year, 'yellow')
             continue
 
         except:
             ### Error output to console
-            cprint('[ERROR]\t\tAn error occured for ' + coin + ' with sl = ' + str(sl_p) + ', tp = ' + str(tp_p) + ' and window = ' + str(window), 'red')
+            cprint('[ERROR]\t\tAn error occured for ' + coin + ' with sl = ' + str(sl_p) + ', tp = ' + str(tp_p) + ', window = ' + str(window) + ' and year = ' + year, 'red')
             continue
 
     ## Average calculation
@@ -153,19 +165,33 @@ def worker_f(directory, strat, max_losses, ema_window, logging):
     formatted_final = json.dumps(final, indent=4)
 
     ## Write into output directory
-    output_dir = directory + "/Strategy_" + strategy + "_validation/"
+    output_dir = directory + "/Strategy_validation/Strategy_" + strategy + "_validation/" + year + "/"
     output_file = output_dir + "optimized_out.json"
     
     with open(output_file, "w") as fp:
         fp.write(formatted_final)
     
     ## Display completion of the worker
-    cprint("[INFO]\t\tSimulation of strategy " + strategy + " is complete", 'blue')
+    cprint("[INFO]\t\tSimulation of strategy " + strategy + " for the year " + year + " is complete", 'blue')
 
     ## Display to console if the logging is on
     if logging:
         colorful = highlight(formatted_final, lexer=JsonLexer(), formatter=Terminal256Formatter())
         print(colorful)
+
+
+
+#--------Validate Year Parameter--------#
+class validateYearParameter(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        global max_allowed_year
+
+        if not (values.isnumeric()):
+            parser.error(f"Please enter a valid year to validate the strategy (allowed values: from 2017 to " + str(max_allowed_year) + "). Got: " + values)
+        else:
+            if not(int(values) >= 2017 and int(values) <= max_allowed_year):
+                parser.error(f"Please enter a valid year to validate the strategy (allowed values: from 2017 to " + str(max_allowed_year) + "). Got: " + values)
+        setattr(namespace, self.dest, values)
 
 
 
@@ -220,6 +246,7 @@ class validateEMAWindowParameter(argparse.Action):
 def parse_command_line():
     ## Global variables
     global max_nb_strategies
+    global max_allowed_year
 
     ## Arguments groups
     parser      = argparse.ArgumentParser()
@@ -227,6 +254,7 @@ def parse_command_line():
 
     ## Arguments
     parser.add_argument("-l", "--logging", action='store_true', dest="logging", help="enable logging in the console")
+    parser.add_argument("-y", "--year", dest="year", help="specify the year to validate the strategy (allowed values: from 2017 to " + str(max_allowed_year) + ")", required=False, default=max_allowed_year, action=validateYearParameter)
     required.add_argument("-d", "--directory", dest="directory", help="directory that will store results", required=True, action=validateDirectoryParameter)
     required.add_argument("-s", "--strategy", dest="strategy", help="choose strategy between 1 and " + str(max_nb_strategies), required=False, action=validateStrategyParameter)
     required.add_argument("-m", "--max-losses", dest="max_losses", help="maximum loss percentage accepted by the strategy (allowed values between 1 and 9)", required=True, action=validateMaxLossesParameter)
@@ -243,28 +271,51 @@ def main(args):
     strategy    = args.strategy
     max_losses  = args.max_losses
     ema_window  = args.ema_window
+    year        = args.year
 
     ## Output to console if logging is enabled
     losses = str(round(1 - float(max_losses) / 100, 3))
-    cprint("\n[INFO]\t\tRunning strategy_testing.py with the strategy number " + strategy + ", losses = " + losses + " and ema_window = " + ema_window, 'blue')
+    cprint("\n[INFO]\t\tRunning strategy_validation.py with the strategy number " + strategy + ", losses = " + losses + ", ema_window = " + ema_window + " and year = " + year, 'blue')
 
     ## Create output directories
     try:
-        os.mkdir(directory + "/Strategy_" + strategy + "_validation")
+        os.mkdir(directory + "/Strategy_validation")
         if logging:
-            cprint("[INFO]\t\tCreation of " + directory + "/Strategy_" + strategy + "_validation directory", 'blue')
+            cprint("[INFO]\t\tCreation of " + directory + "/Strategy_validation directory", 'blue')
     except FileExistsError:
         if logging:
-            cprint("[INFO]\t\tDirectory " + directory + "/Strategy_" + strategy + "_validation already exists", 'blue')
+            cprint("[INFO]\t\tDirectory " + directory + "/Strategy_validation already exists", 'blue')
+        else:
+            None
+    except:
+        raise
+    try:
+        os.mkdir(directory + "/Strategy_validation/Strategy_" + strategy + "_validation")
+        if logging:
+            cprint("[INFO]\t\tCreation of " + directory + "/Strategy_validation/Strategy_" + strategy + "_validation directory", 'blue')
+    except FileExistsError:
+        if logging:
+            cprint("[INFO]\t\tDirectory " + directory + "/Strategy_validation/Strategy_" + strategy + "_validation already exists", 'blue')
+        else:
+            None
+    except:
+        raise
+    try:
+        os.mkdir(directory + "/Strategy_validation/Strategy_" + strategy + "_validation/" + year)
+        if logging:
+            cprint("[INFO]\t\tCreation of " + directory + "/Strategy_validation/Strategy_" + strategy + "_validation/" + year + " directory", 'blue')
+    except FileExistsError:
+        if logging:
+            cprint("[INFO]\t\tDirectory " + directory + "/Strategy_validation/Strategy_" + strategy + "_validation/" + year + " already exists", 'blue')
         else:
             None
     except:
         raise
 
-    worker_f(directory, strategy, max_losses, ema_window, logging)
+    worker_f(directory, strategy, max_losses, ema_window, year, logging)
 
     ## Write exceptional to file
-    output_file = directory + "/Strategy_" + strategy + "_validation/exceptional.json"
+    output_file = directory + "/Strategy_validation/Strategy_" + strategy + "_validation/" + year + "/exceptional.json"
     with open(output_file, "w") as fp:
         fp.write(json.dumps(exceptional, indent=4))
 
