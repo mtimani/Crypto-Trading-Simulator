@@ -169,7 +169,7 @@ def worker_f(directory, year, logging):
     formatted_final = json.dumps(final, indent=4)
 
     ## Write into output directory
-    output_dir = directory + "/History_strategy/History_strategy/" + year + "/"
+    output_dir = directory + "/History_strategy/" + year + "/"
     output_file = output_dir + "optimized_out.json"
     
     with open(output_file, "w") as fp:
