@@ -277,7 +277,7 @@ def main(args):
     worker_f(directory, year, logging)
 
     ## Write exceptional to file
-    output_file = directory + "/History_strategy/History_strategy/" + year + "/exceptional.json"
+    output_file = directory + "/History_strategy/" + year + "/exceptional.json"
     with open(output_file, "w") as fp:
         fp.write(json.dumps(exceptional_new, indent=4))
 
