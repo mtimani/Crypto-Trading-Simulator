@@ -79,6 +79,10 @@ class DataTrader(Strategy):
         self.sl = price * self.sl_p
         self.tp = price * self.tp_p
 
+        self.indicator_bb = ta.volatility.BollingerBands(close=pd.Series(price), window=self.window_1, window_dev=2)
+        self.bb_high = self.indicator_bb.bollinger_hband_indicator().to_numpy()
+        self.bb_low = self.indicator_bb.bollinger_lband_indicator().to_numpy()
+
         if self.strat == "1":
             if crossover(self.macd, self.macd_signal) and price < self.ema_1:
                 self.buy(sl = self.sl, tp = self.tp)
@@ -103,6 +107,11 @@ class DataTrader(Strategy):
             if crossover(self.macd, self.macd_signal) and price < self.ema_1 and self.ema_1 > self.ema_2:
                 self.buy(sl = self.sl, tp = self.tp)
             elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 < self.ema_2:
+                self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "6":
+            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 or price < self.bb_low):
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 or price > self.bb_high):
                 self.sell(sl = self.tp, tp = self.sl)
 
 
