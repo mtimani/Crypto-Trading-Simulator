@@ -1,0 +1,114 @@
+{
+    "ALGOUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 128.59489949110002
+    },
+    "AMPUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 282.60312191650996
+    },
+    "CELRUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 215.53863203230006
+    },
+    "CHRUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 128.67337881510002
+    },
+    "GALAUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 163.768983088025
+    },
+    "HBARUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 158.30980274880002
+    },
+    "HOTUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 105.287012917486
+    },
+    "IOSTUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 127.93386326099998
+    },
+    "IOTXUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 145.12795273210997
+    },
+    "LRCUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 110.19584110414999
+    },
+    "ONEUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 212.811802455175
+    },
+    "SFPUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 125.7065776955
+    },
+    "WAXPUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 181.32178197885003
+    },
+    "WINUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 132.0444500891491
+    },
+    "XEMUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 105.46085396010001
+    },
+    "ZRXUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 182.6490327141001
+    }
+}

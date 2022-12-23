@@ -1,3 +1,3 @@
 ta
 backtesting
-python-binance 
+python-binance

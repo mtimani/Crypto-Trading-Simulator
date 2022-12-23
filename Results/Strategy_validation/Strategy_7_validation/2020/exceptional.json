@@ -1,0 +1,128 @@
+{
+    "ADAUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 209.78716632190998
+    },
+    "BTCUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 131.10812069999997
+    },
+    "CELRUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 105.12526913018996
+    },
+    "CHZUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 136.33751184483498
+    },
+    "CVCUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 153.4877689491
+    },
+    "DOTUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 128.2095637746
+    },
+    "ENJUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 112.52700943412502
+    },
+    "ETHUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 204.90784538999995
+    },
+    "INJUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 133.44916800930002
+    },
+    "LRCUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 122.30240523592491
+    },
+    "ONGUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 147.86010145174996
+    },
+    "STXUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 268.76557793480004
+    },
+    "TFUELUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 452.2479259374691
+    },
+    "THETAUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 1191.459816630255
+    },
+    "TRXUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 130.19870395206496
+    },
+    "VETUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 180.78248106723248
+    },
+    "WAVESUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 365.2091325097001
+    },
+    "ZILUSDT": {
+        "sl": 0.91,
+        "tp": 1.135,
+        "ema_window": 100.0,
+        "strategy": "7",
+        "average": 451.2146119182401
+    }
+}

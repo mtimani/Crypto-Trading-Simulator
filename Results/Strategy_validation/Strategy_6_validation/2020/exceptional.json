@@ -1,0 +1,9 @@
+{
+    "STORJUSDT": {
+        "sl": 0.93,
+        "tp": 1.105,
+        "ema_window": 100.0,
+        "strategy": "6",
+        "average": 144.79732449989996
+    }
+}

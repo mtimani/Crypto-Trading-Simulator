@@ -109,10 +109,15 @@ class DataTrader(Strategy):
             elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 < self.ema_2:
                 self.sell(sl = self.tp, tp = self.sl)
         elif self.strat == "6":
-            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 or price < self.bb_low):
+            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 and price < self.bb_low and self.ema_1 > self.ema_2):
                 self.buy(sl = self.sl, tp = self.tp)
-            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 or price > self.bb_high):
+            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 and price > self.bb_high and self.ema_1 < self.ema_2):
                 self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "7":
+            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 and price > self.bb_low and self.ema_1 > self.ema_2):
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 and price < self.bb_high and self.ema_1 < self.ema_2):
+                self.sell(sl = self.tp, tp = self.sl)        
 
 
 

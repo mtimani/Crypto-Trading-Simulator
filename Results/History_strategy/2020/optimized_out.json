@@ -1,5 +1,5 @@
 {
-    "average": -27.871724502080042,
+    "average": -31.917329581443642,
     "results": {
         "AAVEUSDT": {
             "sl": 0.97,
@@ -68,8 +68,8 @@
             "sl": 0.99,
             "tp": 1.015,
             "ema_window": 100,
-            "strategy": "1",
-            "return": 9.968205690999937
+            "strategy": "6",
+            "return": -13.594312312999959
         },
         "BATUSDT": {
             "sl": 0.93,
@@ -121,18 +121,18 @@
             "return": -100.0
         },
         "CRVUSDT": {
-            "sl": 0.91,
-            "tp": 1.135,
+            "sl": 0.92,
+            "tp": 1.12,
             "ema_window": 20,
-            "strategy": "5",
+            "strategy": "6",
             "return": 22.79462106149999
         },
         "CVCUSDT": {
             "sl": 0.93,
             "tp": 1.105,
             "ema_window": 100,
-            "strategy": "5",
-            "return": 121.12794279535002
+            "strategy": "6",
+            "return": -100.0
         },
         "DASHUSDT": {
             "sl": 0.95,
@@ -159,8 +159,8 @@
             "sl": 0.98,
             "tp": 1.03,
             "ema_window": 200,
-            "strategy": "1",
-            "return": -14.671524752903498
+            "strategy": "6",
+            "return": 0.0
         },
         "DOTUSDT": {
             "sl": 0.95,
@@ -229,8 +229,8 @@
             "sl": 0.94,
             "tp": 1.09,
             "ema_window": 20,
-            "strategy": "1",
-            "return": -33.25796639895003
+            "strategy": "6",
+            "return": 97.96890003204997
         },
         "HNTUSDT": {
             "sl": 0.91,
@@ -362,8 +362,8 @@
             "sl": 0.97,
             "tp": 1.045,
             "ema_window": 20,
-            "strategy": "1",
-            "return": 73.95123631550008
+            "strategy": "6",
+            "return": -9.768532853699915
         },
         "OMGUSDT": {
             "sl": 0.93,
@@ -383,8 +383,8 @@
             "sl": 0.98,
             "tp": 1.03,
             "ema_window": 100,
-            "strategy": "1",
-            "return": 13.717947920199919
+            "strategy": "6",
+            "return": -66.87039281915
         },
         "ONTUSDT": {
             "sl": 0.97,
@@ -478,10 +478,10 @@
             "return": 220.75972970000004
         },
         "SUSHIUSDT": {
-            "sl": 0.92,
-            "tp": 1.12,
-            "ema_window": 100,
-            "strategy": "5",
+            "sl": 0.93,
+            "tp": 1.105,
+            "ema_window": 50,
+            "strategy": "6",
             "return": -100.0
         },
         "SXPUSDT": {
@@ -586,8 +586,8 @@
             "sl": 0.91,
             "tp": 1.135,
             "ema_window": 20,
-            "strategy": "1",
-            "return": -7.086932540000008
+            "strategy": "6",
+            "return": -100.0
         },
         "ZECUSDT": {
             "sl": 0.93,

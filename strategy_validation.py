@@ -35,7 +35,7 @@ coins = ["AAVEUSDT","ABBCUSDT","ADAUSDT","ALGOUSDT","AMPUSDT","ANKRUSDT","ANTUSD
 #-----------Global variables------------#
 strategy = 0
 max_allowed_year = int(datetime.date.today().strftime("%Y"))
-max_nb_strategies = 6
+max_nb_strategies = 7
 exceptional = {}
 
 
@@ -116,10 +116,15 @@ class DataTrader(Strategy):
             elif crossover(self.macd, self.macd_signal) and price > self.ema_1 and self.ema_1 < self.ema_2:
                 self.sell(sl = self.tp, tp = self.sl)
         elif self.strat == "6":
-            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 or price < self.bb_low):
+            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 and price < self.bb_low and self.ema_1 > self.ema_2):
                 self.buy(sl = self.sl, tp = self.tp)
-            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 or price > self.bb_high):
+            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 and price > self.bb_high and self.ema_1 < self.ema_2):
                 self.sell(sl = self.tp, tp = self.sl)
+        elif self.strat == "7":
+            if crossover(self.macd, self.macd_signal) and (price < self.ema_1 and price > self.bb_low and self.ema_1 > self.ema_2):
+                self.buy(sl = self.sl, tp = self.tp)
+            elif crossover(self.macd, self.macd_signal) and (price > self.ema_1 and price < self.bb_high and self.ema_1 < self.ema_2):
+                self.sell(sl = self.tp, tp = self.sl)  
 
 
 
@@ -168,12 +173,12 @@ def worker_f(directory, strat, max_losses, ema_window, year, logging):
         except BinanceAPIException as e:
             ### Warning output to console if logging is enabled
             if logging:
-                cprint("[WARNING]\tCoin " + coin + " is not available with sl = " + str(sl_p) + ", tp = " + str(tp_p) + ", window = " + str(window) + " and year = " + year, 'yellow')
+                cprint("[WARNING]\tCoin " + coin + " is not available with sl = " + str(sl_p) + ", tp = " + str(tp_p) + ", window = " + str(window) + ", year = " + year + " and strategy = " + str(strategy), 'yellow')
             continue
 
         except:
             ### Error output to console
-            cprint('[ERROR]\t\tAn error occured for ' + coin + ' with sl = ' + str(sl_p) + ', tp = ' + str(tp_p) + ', window = ' + str(window) + ' and year = ' + year, 'red')
+            cprint('[ERROR]\t\tAn error occured for ' + coin + ' with sl = ' + str(sl_p) + ', tp = ' + str(tp_p) + ', window = ' + str(window) + ', year = ' + year + " and strategy = " + str(strategy), 'red')
             continue
 
     ## Average calculation
