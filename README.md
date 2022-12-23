@@ -29,8 +29,13 @@ Crypto Trading Bot Simulator allowing to simulate different trading strategies
 
 ### Strategy 6
 * Await MACD and MACD curves crossover
-* If the current price is lower than the EMA with the lesser specified window OR if the current price is lesser than the low Bollinger band with the lesser specified window => buy crypto (with consideration of max_losses and max_gains)
-* If the current price is greater than the EMA with the lesser specified window OR if the current price is greater than the high Bollinger band with the lesser specified window => sell crypto (with consideration of max_losses and max_gains)
+* If the current price is lower than the EMA with the lesser specified window AND if the current price is lesser than the low Bollinger band with the lesser specified window AND if the EMA with the lesser window is greater than the EMA with the greater window => buy crypto (with consideration of max_losses and max_gains)
+* If the current price is greater than the EMA with the lesser specified window AND if the current price is greater than the high Bollinger band with the lesser specified window AND if the EMA with the lesser window is lesser than the EMA with the greater window => sell crypto (with consideration of max_losses and max_gains)
+
+### Strategy 7
+* Await MACD and MACD curves crossover
+* If the current price is lower than the EMA with the lesser specified window AND if the current price is greater than the low Bollinger band with the lesser specified window AND if the EMA with the lesser window is greater than the EMA with the greater window => buy crypto (with consideration of max_losses and max_gains)
+* If the current price is greater than the EMA with the lesser specified window AND if the current price is lesser than the high Bollinger band with the lesser specified window AND if the EMA with the lesser window is lesser than the EMA with the greater window => sell crypto (with consideration of max_losses and max_gains)
 
 ## Installation
 ```
@@ -56,7 +61,7 @@ required arguments:
 mutually exclusive arguments:
   -a, --all             run all scripts for all strategies
   -s STRATEGY [STRATEGY ...], --strategies STRATEGY [STRATEGY ...]
-                        run specific strategies (allowed strategies between 1 and 6)
+                        run specific strategies (allowed strategies between 1 and 7)
 ```
 
 ## Usage of each script separately
@@ -95,7 +100,7 @@ required arguments:
 mutually exclusive arguments:
   -a, --all             run script with all strategies
   -s STRATEGY [STRATEGY ...], --strategies STRATEGY [STRATEGY ...]
-                        run script with specific strategies (allowed strategies between 1 and 6)
+                        run script with specific strategies (allowed strategies between 1 and 7)
 ```
 
 ### exceptional_list_creation.py
@@ -116,7 +121,7 @@ required arguments:
 mutually exclusive arguments:
   -a, --all             run script with all strategies
   -s STRATEGY [STRATEGY ...], --strategies STRATEGY [STRATEGY ...]
-                        run script with specific strategies (allowed strategies between 1 and 6)
+                        run script with specific strategies (allowed strategies between 1 and 7)
 ```
 
 ### strategy_validation.py
@@ -131,7 +136,7 @@ options:
   -l, --logging         enable logging in the console
   -y YEAR, --year YEAR  specify the year to validate the strategy (allowed values: from 2017 to 2023)
   -s STRATEGY, --strategy STRATEGY
-                        choose strategy between 1 and 6
+                        choose strategy between 1 and 7
 
 required arguments:
   -d DIRECTORY, --directory DIRECTORY
