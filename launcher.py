@@ -17,7 +17,7 @@ from termcolor import colored, cprint
 
 
 #-----------Global variables------------#
-max_nb_strategies = 5
+max_nb_strategies = 6
 max_allowed_year = int(datetime.date.today().strftime("%Y"))
 min_allowed_year = 2017
 
