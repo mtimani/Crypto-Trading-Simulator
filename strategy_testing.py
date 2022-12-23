@@ -161,7 +161,7 @@ def worker_f(directory, strat, logging):
         except BinanceAPIException as e:
             ### Warning output to console if logging is enabled
             if logging:
-                cprint("[WARNING]\tCoin " + coin + " is not available with sl = " + str(sl_p) + ", tp = " + str(tp_p) + ", window = " + str(window) + " and strategy = " + str(srategy), 'yellow')
+                cprint("[WARNING]\tCoin " + coin + " is not available with sl = " + str(sl_p) + ", tp = " + str(tp_p) + ", window = " + str(window) + " and strategy = " + str(strategy), 'yellow')
             continue
 
         except:
