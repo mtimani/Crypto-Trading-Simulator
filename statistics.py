@@ -15,7 +15,7 @@ from termcolor import colored, cprint
 
 
 #-----------Global variables------------#
-max_nb_strategies = 6
+max_nb_strategies = 7
 
 
 

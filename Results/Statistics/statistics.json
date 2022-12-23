@@ -93,5 +93,43 @@
             "100.0": 69,
             "20_exceptional": 49
         }
+    },
+    "strategy_6": {
+        "Average": 133.02215768461454,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "100.0": 41
+            },
+            "Most frequent EMA for most frequent loss": {
+                "100.0": 7
+            },
+            "Most frequent losses": {
+                "0.93": 19
+            }
+        },
+        "Optimized": {
+            "0.98": 25,
+            "100.0": 74,
+            "100_exceptional": 74
+        }
+    },
+    "strategy_7": {
+        "Average": 25.719027412116002,
+        "Exceptional": {
+            "Most frequent EMA": {
+                "20.0": 9
+            },
+            "Most frequent EMA for most frequent loss": {
+                "100.0": 3
+            },
+            "Most frequent losses": {
+                "0.91": 5
+            }
+        },
+        "Optimized": {
+            "0.99": 63,
+            "100.0": 58,
+            "100_exceptional": 58
+        }
     }
 }

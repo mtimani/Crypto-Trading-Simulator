@@ -1,5 +1,5 @@
 {
-    "average": -12.11725697402755,
+    "average": -9.911650485027318,
     "results": {
         "ADAUSDT": {
             "sl": 0.93,
@@ -68,8 +68,8 @@
             "sl": 0.93,
             "tp": 1.105,
             "ema_window": 100,
-            "strategy": "5",
-            "return": 54.63142611092003
+            "strategy": "6",
+            "return": 56.865181510919996
         },
         "DASHUSDT": {
             "sl": 0.95,
@@ -82,8 +82,8 @@
             "sl": 0.98,
             "tp": 1.03,
             "ema_window": 200,
-            "strategy": "1",
-            "return": 7.624599084539427
+            "strategy": "6",
+            "return": 0.0
         },
         "ENJUSDT": {
             "sl": 0.92,
@@ -194,8 +194,8 @@
             "sl": 0.98,
             "tp": 1.03,
             "ema_window": 100,
-            "strategy": "1",
-            "return": -33.369353363850024
+            "strategy": "6",
+            "return": 73.4793888147
         },
         "ONTUSDT": {
             "sl": 0.97,

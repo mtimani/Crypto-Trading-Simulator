@@ -7,14 +7,6 @@
         "strategy": "1",
         "average": 189.5669501675
     },
-    "CVCUSDT": {
-        "sl": 0.93,
-        "tp": 1.105,
-        "ema_window": 100,
-        "coin": "CVCUSDT",
-        "strategy": "5",
-        "average": 121.12794279535002
-    },
     "SNXUSDT": {
         "sl": 0.94,
         "tp": 1.09,
