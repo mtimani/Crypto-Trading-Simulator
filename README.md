@@ -1,7 +1,7 @@
 # Crypto Trading Simulator
 Crypto Trading Bot Simulator allowing to simulate different trading strategies
 
-## Strategies
+## Strategies description
 ### Strategy 1
 * Await MACD and MACD curves crossover
 * If the current price is lower than the EMA (with the specified window) => buy crypto (with consideration of max_losses and max_gains)
